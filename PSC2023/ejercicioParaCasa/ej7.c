@@ -41,6 +41,7 @@ int main()
   }else{
       printf("Tipo de combustible: \n");
   }
+  //Depende del tipo de combustible, muestra directamente el nombre de este
   printf("Peso: %.2f KG\n", coche.peso);
   printf("Número de asientos: %d\n", coche.numeroAsientos);
 
