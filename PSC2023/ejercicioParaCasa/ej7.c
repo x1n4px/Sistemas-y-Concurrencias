@@ -1,13 +1,13 @@
- //Ejercicio 7. Crea una estructura llamada strCoche y define un alias Coche de esa estructura. La estructura
- // strCoche contendrá las siguientes variables: color (char[20]), tipo (caracter, 'd' diesel, 'g' gasolina),
- // peso (float), numeroAsientos (int). Haz un programa que pregunta al usuario y permite almacenar/cambiar 
- //los datos de un coche. Haz una pregunta por variable e imprime, despúes de cambiar la variable, el contenido del Coche.
+// Ejercicio 7. Crea una estructura llamada strCoche y define un alias Coche de esa estructura. La estructura
+//  strCoche contendrá las siguientes variables: color (char[20]), tipo (caracter, 'd' diesel, 'g' gasolina),
+//  peso (float), numeroAsientos (int). Haz un programa que pregunta al usuario y permite almacenar/cambiar
+// los datos de un coche. Haz una pregunta por variable e imprime, despúes de cambiar la variable, el contenido del Coche.
 
- 
 #include <stdio.h>
 #include <string.h>
 
-typedef struct {
+typedef struct
+{
   char color[20];
   char tipo;
   float peso;
@@ -16,7 +16,8 @@ typedef struct {
 
 typedef strCoche Coche;
 
-int main() {
+int main()
+{
   Coche coche;
 
   printf("Introduce el color del coche: ");
@@ -33,10 +34,15 @@ int main() {
 
   printf("Los datos del coche son: \n");
   printf("Color: %s\n", coche.color);
-  printf("Tipo de combustible: %c\n", coche.tipo);
-  printf("Peso: %.2f\n", coche.peso);
+  if(coche.tipo == 'g'){
+  printf("Tipo de combustible: gasolina\n");
+  }else if(coche.tipo == 'd'){
+      printf("Tipo de combustible: diesel\n");
+  }else{
+      printf("Tipo de combustible: \n");
+  }
+  printf("Peso: %.2f KG\n", coche.peso);
   printf("Número de asientos: %d\n", coche.numeroAsientos);
 
   return 0;
 }
-
