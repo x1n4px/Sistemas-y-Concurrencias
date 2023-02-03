@@ -10,8 +10,9 @@ ptr = &x;
 ```
 En este ejemplo, x es una variable entera y ptr es un puntero a un entero. La asignación ptr = &x le asigna a ptr la dirección de memoria de x.
 
+
 2. Uso de un puntero
-```
+```ruby
 int x = 10;
 int *ptr;
 ptr = &x;
@@ -20,16 +21,18 @@ ptr = &x;
 ```
 En este ejemplo, se utiliza el operador de indirección * para modificar el valor almacenado en la dirección a la que apunta ptr. Después de ejecutar este código, el valor de x será 20.
 
+
 3. Arreglos y punteros
-```
+```ruby
 int arr[5] = {1, 2, 3, 4, 5};
 int *ptr;
 ptr = arr;
 ```
 En este ejemplo, arr es un arreglo de enteros y ptr es un puntero a un entero. La asignación ptr = arr le asigna a ptr la dirección del primer elemento de arr. Podemos acceder a los elementos del arreglo a través del puntero usando la siguiente sintaxis: *(ptr + i) para acceder al i-ésimo elemento del arreglo
 
+
 4. Funciones y punteros:
-```
+```ruby
 void swap(int *a, int *b){
   int temp = *a;
   *a = *b;
