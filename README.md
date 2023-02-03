@@ -2,7 +2,7 @@
 
 ## Punteros:
 1. Declaración de un puntero:
-```
+```ruby
 int x = 10;
 int *ptr;
 ptr = &x;
