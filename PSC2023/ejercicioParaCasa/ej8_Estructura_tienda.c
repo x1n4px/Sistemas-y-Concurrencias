@@ -76,7 +76,7 @@ void agregar(char *revision, union u_Item *item, int *numArticulosLibro, int *nu
         printf("Introduce el titulo del libro: ");
         scanf("%s", item->revista.titulo);
         printf("Introduce el mes del libro: ");
-        scanf("%s", &item->revista.mes);
+        scanf("%d", &(item->revista.mes));      
         printf("Introduce el precio del libro: ");
         scanf("%d", &item->revista.precio);
 
