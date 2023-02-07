@@ -1,5 +1,7 @@
 # Sistemas-y-Concurrencias
 
+[Diferencias entre %i y %d](https://www.geeksforgeeks.org/difference-d-format-specifier-c-language/)
+
 ## Punteros:
 1. Declaración de un puntero:
 ```ruby
