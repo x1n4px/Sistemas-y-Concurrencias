@@ -1,0 +1,148 @@
+#include <stdio.h>
+#include <string.h>
+#define MAX_ELEMENTOS 100
+
+typedef struct  ListaNum * lista;
+
+/*
+//Recorrido de una lista
+ptr = lista;
+while(ptr != NULL){
+    //procesar *ptr
+    ptr = ptr->sig;
+}
+*/
+//Mostrar una lista
+void mostrar(ListaNum lista){
+    ListaNum ptr;
+
+    ptr = lista;
+    while(ptr != NULL){
+        escribir(ptr->num);
+        ptr = ptr->sig;
+    }
+}
+
+//Buscar un nodo en una lista
+ListaNum buscarNodo(ListaNum lista, int elem){
+    ListaNum ptr;
+
+    ptr = lista;
+    while((ptr != NULL) && (elem != ptr->num)){
+        ptr = ptr->sig;
+    }
+    return ptr;
+}
+
+//Eliminar el Primer nodo
+void eliminarPrimero(ListaNum *lista){
+    ListaNum ptr;
+
+    if(lista != NULL){
+        ptr = *lista;
+        *lista = (*lista)->sig;
+        free(ptr);
+    }
+}
+
+//Insertar un Nodo al Principio
+void insertarPrincipio(ListaNum *lista, int elem){
+    ListaNum ptr;
+
+    ptr = malloc(sizeof(struct NodoNum));
+    ptr->num = elem;
+    ptr->sig = *lista;
+    *lista = ptr;
+}
+
+//Insertar un Nodo en una Lista Enlazada Ordenada
+void insertarOrdenado(ListaNum *lista, int elem){
+    ListaNum nuevoNodo; //Para crear el nuevo nodo
+    ListaNum ant, ptr; //para posicionarnos donde insertarOrdenado
+
+    //Creamos el nuevo nodo
+    nuevonodo = malloc(sizeof(struct NodoNum));
+    nuevonodo->num = elem;
+
+    //Buscamos donde insertar
+    if(*lista == NULL){ //Lista vacia
+        nuevonodo->sig = NULL;
+        *lista = nuevonodo;
+    }else if(nuevonodo->num <= (*lista)->num){
+        //insertar al Principio
+        nuevonodo->sig = *lista;
+        *lista = nuevonodo;
+    }else{ //insertar en medio o al final
+        ant = *lista;
+        ptr = (*lista)->sig;
+        while((ptr != NULL) && (nuevonodo->num > ptr->num)){
+            ant = ptr;
+            ptr = ptr->sig;
+        }
+        nuevonodo->sig = ptr;
+        ant->sig = nuevonodo;
+    }
+}
+
+
+//Eliminar un Nodo en una Lista Enlazada 
+void eliminar(ListaNum *lista, int elem){
+    ListaNum ptr; //Usamos dos vbles
+    ListaNum ant; //ant siempre va un paso por detras de ptr
+
+
+    if(*lista != NULL){ //Lista no vacia
+        if((*lista)->num == elem){
+            eliminarPrimero(lista);
+        }
+    }else{ //buscar elem en resto de la lista
+        ant = *lista;
+        ptr = (*lista)->sig;
+        while((ptr != NULL) && (ptr->num != elem)){
+            ant = ptr;
+            ptr = ptr->sig;
+        }
+        if(ptr != NULL){ //encontrado
+            ant->sig = ptr->sig;
+            free(ptr);
+        }
+    }
+}
+
+
+//Creacion de una lista vacia
+ListaNum crearLista(){
+    return NULL;
+}
+
+
+//Ejemplo de creacion de una lista con elementos
+//Crear una lista añadiendo los nodos nuevos al final
+//Lee secuencia de numeros terminada en 0
+ListaNum crearLista(){
+    int dato;
+    ListaNum lista, ptr;
+
+    scanf("%d", &dato);
+    if(!datos){ //Si dato contiene 0 se crea la lista vacia
+        lista = NULL;
+    }else{
+        lista = malloc(sizeof(struct NodoNum)); //primer nodo
+        lista->num = dato;
+        ptr = lista; //Apunta el primer nodo
+        scanf("%d", &dato);
+        while(dato){ //termina si dato contiene 0
+            ptr->sig = malloc(sizeof(struct NodoNum));
+            ptr = ptr->sig;
+            ptr->num = datos; //copiar nodo
+            scanf("%d", &dato);
+        }
+        ptr->sig = NULL;
+    }
+    return lista;
+}
+
+int main(){
+    ListaNum lista;
+    lista = crearLista();mostrar(lista);
+}
