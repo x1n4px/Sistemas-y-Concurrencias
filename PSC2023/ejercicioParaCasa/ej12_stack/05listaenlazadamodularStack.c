@@ -21,7 +21,7 @@ Ejercicio
 
 
 */
-#include "stack.h";
+#include "stack.h"
 #include <assert.h> //Esta duplicado porque no podemos asumir que lo incluyan en stack
 int main(int argc, char const *argv[])
 {
@@ -43,7 +43,6 @@ int main(int argc, char const *argv[])
     stackPop(myStack, &pop);
     assert(pop == 14);
     assert(stackSize(myStack) == 1);
-
 
     return 0;
 }
