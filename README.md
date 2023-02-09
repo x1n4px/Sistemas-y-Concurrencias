@@ -14,7 +14,7 @@ print *lista //Muestra el contenido de la lista
 print lista //Muestra la posicion de la lista
 ``` 
 
-
+[Funciones Básicas Punteros](https://github.com/x1n4px/Sistemas-y-Concurrencias/blob/main/temario/PSC-Tema2.pdf)
 
 ## Punteros:
 1. Declaración de un puntero:
