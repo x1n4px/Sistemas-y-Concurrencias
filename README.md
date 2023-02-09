@@ -6,10 +6,12 @@
 gcc -g Main.c programa.c -o nombreEjecutable
 gdb nombreEjecutable
 //Una vez dentro del debug:
-break Main.c:Linea a debug
+break Main.c:Linea a debug  -> se puede borrar(delete) o bloquear temporalmente (disable breakpoint Numero)
 run // Para correr el programa
 n // Para siguiente (next)
 quit // Para salir
+print *lista //Muestra el contenido de la lista
+print lista //Muestra la posicion de la lista
 ``` 
 
 
