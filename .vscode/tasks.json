@@ -1,0 +1,32 @@
+{
+    "tasks": [
+      {
+        "type": "shell",
+        "label": "g++.exe build active file",
+        "command": "gdb",
+        "args": [
+          "-g",
+          "${file}",
+          "-o",
+          "${fileDirname}/${fileBasenameNoExtension}.exe"
+        ],
+        "options": {
+          "cwd": "/usr/bin/gdb"
+        }
+      },
+      {
+        "type": "shell",
+        "label": "g++ build & run active file",
+        "command": "/usr/bin/gdb",
+        "args": [
+          "${file}",
+          "-o",
+          "${fileDirname}/${fileBasenameNoExtension}.exe"
+        ],
+        "options": {
+          "cwd": "gdb"
+        }
+      }
+    ],
+    "version":"2.0.0"
+  }
