@@ -1,8 +1,23 @@
 # Sistemas-y-Concurrencias
 
 [Diferencias entre "%i" y "%d"](https://www.geeksforgeeks.org/difference-d-format-specifier-c-language/)
+### Como Usar Debug en linea de comando:
+```
+gcc -g Main.c programa.c -o nombreEjecutable
+gdb nombreEjecutable
+//Una vez dentro del debug:
+break Main.c:Linea a debug  -> se puede borrar(delete) o bloquear temporalmente (disable breakpoint Numero)
+run // Para correr el programa
+n // Para siguiente (next)
+quit // Para salir
+print *lista //Muestra el contenido de la lista
+print lista //Muestra la posicion de la lista
+``` 
+
 
 ## Punteros:
+[Funciones Básicas Punteros](https://github.com/x1n4px/Sistemas-y-Concurrencias/blob/main/temario/PSC-Tema2.pdf)
+
 1. Declaración de un puntero:
 ```ruby
 int x = 10;
