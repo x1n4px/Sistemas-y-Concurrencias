@@ -1,6 +1,18 @@
 # Sistemas-y-Concurrencias
 
 [Diferencias entre "%i" y "%d"](https://www.geeksforgeeks.org/difference-d-format-specifier-c-language/)
+### Como Usar Debug en linea de comando:
+```
+gcc -g Main.c programa.c -o nombreEjecutable
+gdb nombreEjecutable
+//Una vez dentro del debug:
+break Main.c:Linea a debug
+run // Para correr el programa
+n // Para siguiente (next)
+quit // Para salir
+``` 
+
+
 
 ## Punteros:
 1. Declaración de un puntero:
