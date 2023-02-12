@@ -18,6 +18,11 @@ print lista //Muestra la posicion de la lista
 ## Punteros:
 [Funciones Básicas Punteros](https://github.com/x1n4px/Sistemas-y-Concurrencias/blob/main/temario/PSC-Tema2.pdf)
 
+[Practica 1 2023](https://github.com/x1n4px/Sistemas-y-Concurrencias/tree/main/PSC2023/Practicas/Practica1-2023/Tremor)
+
+[Practica 1 2022](https://github.com/x1n4px/Sistemas-y-Concurrencias/tree/main/PSC2023/Practicas/Practica1-2022/recursos%20practica%201)
+
+
 1. Declaración de un puntero:
 ```ruby
 int x = 10;
