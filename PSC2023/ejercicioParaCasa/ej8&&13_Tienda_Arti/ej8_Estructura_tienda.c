@@ -67,7 +67,7 @@ void agregar(char *revision, union u_Item *item, int *numArticulosLibro, int *nu
         scanf("%d", &item->libro.paginas);
         printf("Introduce el precio del libro: ");
         scanf("%f", &item->libro.precio);
-
+        printf("\n");
         (*numArticulosLibro)++;
     }
     else if (*revision == 'r')
@@ -76,16 +76,17 @@ void agregar(char *revision, union u_Item *item, int *numArticulosLibro, int *nu
         printf("Introduce el titulo del libro: ");
         scanf("%s", item->revista.titulo);
         printf("Introduce el mes del libro: ");
-        scanf("%d", &(item->revista.mes));      
+        scanf("%i", &(item->revista.mes));
         printf("Introduce el precio del libro: ");
-        scanf("%d", &item->revista.precio);
-
+        scanf("%f", &item->revista.precio);
+        printf("\n");
         (*numArticulosRevista)++;
     }
 }
 
 void mostrar(const union u_Item *item, const int *numArticulosLibro, const int *numArticulosRevista)
 {
+    enum Meses mes;
     for (int i = 0; i < (*numArticulosLibro); i++)
     {
         printf("Libro Nº: %d | Titulo: %s | Autor: %s | Num Paginas: %d | Precio: %2.f €\n", i, item->libro.titulo, item->libro.autor, item->libro.paginas, item->libro.precio);
@@ -93,7 +94,51 @@ void mostrar(const union u_Item *item, const int *numArticulosLibro, const int *
 
     for (int i = 0; i < (*numArticulosRevista); i++)
     {
-        printf("Revista Nº: %d | Titulo: %s | Mes: %d | Precio: %2.f €\n", i, item->revista.titulo, item->revista.mes, item->revista.precio);
+
+        printf("Revista Nº: %d\n", i);
+        printf("Titulo: %s\n", item->revista.titulo);
+        switch ((item->revista.mes))
+        {
+        case 0:
+            printf("Mes: Enero (%d)\n", item->revista.mes);
+            break;
+        case 1:
+            printf("Mes: Febrero (%d)\n", item->revista.mes);
+            break;
+        case 2:
+            printf("Mes: Marzo (%d)\n", item->revista.mes);
+            break;
+        case 3:
+            printf("Mes: Abril (%d)\n", item->revista.mes);
+            break;
+        case 4:
+            printf("Mes: Mayo (%d)\n", item->revista.mes);
+            break;
+        case 5:
+            printf("Mes: Junio (%d)\n", item->revista.mes);
+            break;
+        case 6:
+            printf("Mes: Julio (%d)\n", item->revista.mes);
+            break;
+        case 7:
+            printf("Mes: Agosto (%d)\n", item->revista.mes);
+            break;
+        case 8:
+            printf("Mes: Septiembre (%d)\n", item->revista.mes);
+            break;
+        case 9:
+            printf("Mes: Octubre (%d)\n", item->revista.mes);
+            break;
+        case 10:
+            printf("Mes: Noviembre (%d)\n", item->revista.mes);
+            break;
+        case 11:
+            printf("Mes: Diciembre (%d)\n", item->revista.mes);
+            break;
+        default:
+            break;
+        }
+        printf("Precio: %2.f €\n", item->revista.precio);
     }
 }
 
@@ -104,42 +149,19 @@ int main()
     int numArticulosLibro = 0;
     int numArticulosRevista = 0;
     int compr;
-    /*
-        for (int i = 0; i < 2; i++)
-        {
-            agregar(&revision, &item, &numArticulosLibro, &numArticulosRevista);
-        }
 
-        mostrar(&item, &numArticulosLibro, &numArticulosRevista);
-    */
-   // Choice variable
-    int choice = -1;
-    
-    // Menu display
-    printf("MENU:\n1. Agregar\n2. Mostrar\n3. Exit");
+    int veces = 0;
 
-   while(1){
+    printf("Cuantos articulos quieres añadir?: ");
+    scanf("%d", &veces);
+
+    for (int i = 0; i <= veces; i++)
+    {
+        agregar(&revision, &item, &numArticulosLibro, &numArticulosRevista);
         
-        
-        // If-else ladder
-        if(choice == 1){
-            agregar(&revision, &item, &numArticulosLibro, &numArticulosRevista);
-            
-        }
-        else if (choice == 2){
-            mostrar(&item, &numArticulosLibro, &numArticulosRevista);
-        }
-        else if (choice == 3){
-            printf("FIN\n");
-            // Termination of the Loop using break statement
-            break;
-        }
-        else{
-            printf("> Invalid Input\n");
-        }
-        printf("\nEnter your choice:");
-        scanf("%d", &choice);
     }
+
+    mostrar(&item, &numArticulosLibro, &numArticulosRevista);
 
     return 0;
 }
