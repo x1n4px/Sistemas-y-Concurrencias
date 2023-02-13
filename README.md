@@ -2,6 +2,11 @@
 
 [Diferencias entre "%i" y "%d"](https://www.geeksforgeeks.org/difference-d-format-specifier-c-language/)
 
+Debud por consola:
+- gcc -g 05listaenlazadamodularStack.c stack.c -o ejecutable
+- gdb ejecutable
+- Una vez dentro de la ejecución -> break 05listaenlazadamodulaStack.c:31 (continue para continuar)
+
 ## Punteros:
 1. Declaración de un puntero:
 ```ruby
