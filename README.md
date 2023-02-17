@@ -22,6 +22,9 @@ print lista //Muestra la posicion de la lista
 
 [Practica 1 2022](https://github.com/x1n4px/Sistemas-y-Concurrencias/tree/main/PSC2023/Practicas/Practica1-2022/recursos%20practica%201)
 
+[Practica 2 2023](https://github.com/x1n4px/Sistemas-y-Concurrencias/tree/main/PSC2023/Practicas/Practica2-2023/Practica2)
+
+
 
 1. Declaración de un puntero:
 ```ruby
