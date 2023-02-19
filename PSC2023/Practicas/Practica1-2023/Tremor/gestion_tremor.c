@@ -60,7 +60,8 @@ ptr_lista_nuevos no puede quedar igualada a NULL, ya que tiene que cumplir que p
 
 void procesar(T_Lista *ptr_lista_nuevos, const time_t *fecha, T_Lista *ptr_lista_procesados)
 {
-    T_Lista nodo_anterior = NULL, nodo_actual = *ptr_lista_nuevos;
+    T_Lista nodo_anterior = NULL;
+    T_Lista nodo_actual = *ptr_lista_nuevos;
     T_Lista ultimo_procesado = NULL;
 
     while (nodo_actual != NULL)
