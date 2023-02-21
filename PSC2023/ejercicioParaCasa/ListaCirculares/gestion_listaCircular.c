@@ -53,8 +53,14 @@ void insertarCabeza(ptr_lista_entero *ptr_lista, int valor, int *ok)
     }
     else
     {
-        nuevo_elemento->sig = (*ptr_lista)->sig;
-        (*ptr_lista)->sig = nuevo_elemento;
+        nuevo_elemento->sig = *ptr_lista;
+        ptr_lista_entero actual = *ptr_lista;
+        while (actual->sig != *ptr_lista)
+        {
+            actual = actual->sig;
+        }
+        actual->sig = nuevo_elemento;
+        *ptr_lista = nuevo_elemento;
     }
     *ok = 1;
 }
@@ -68,9 +74,9 @@ void insertarCola(ptr_lista_entero *ptr_lista, int valor, int *ok)
         return;
     }
     nuevo_elemento->numero = valor;
+    nuevo_elemento->sig = nuevo_elemento;
     if (*ptr_lista == NULL)
     {
-        nuevo_elemento->sig = nuevo_elemento;
         *ptr_lista = nuevo_elemento;
     }
     else
@@ -85,19 +91,22 @@ void insertarCola(ptr_lista_entero *ptr_lista, int valor, int *ok)
 void insertarOrdenado(ptr_lista_entero *ptr_lista, int valor, int *ok)
 {
     ptr_lista_entero nuevo_nodo = (ptr_lista_entero)malloc(sizeof(struct Lista_Entero));
-    if(nuevo_nodo == NULL){
+    if (nuevo_nodo == NULL)
+    {
         *ok = 0;
         return;
     }
     nuevo_nodo->numero = valor;
     nuevo_nodo->sig = NULL;
 
-    if(*ptr_lista == NULL || valor <= (*ptr_lista)->numero){
+    if (*ptr_lista == NULL || valor <= (*ptr_lista)->numero)
+    {
         insertarCabeza(ptr_lista, valor, ok);
         return;
     }
     ptr_lista_entero actual = *ptr_lista;
-    while(actual->sig != *ptr_lista && actual->sig->numero < valor){
+    while (actual->sig != *ptr_lista && actual->sig->numero < valor)
+    {
         actual = actual->sig;
     }
     nuevo_nodo->sig = actual->sig;
@@ -107,16 +116,20 @@ void insertarOrdenado(ptr_lista_entero *ptr_lista, int valor, int *ok)
 
 void borrarCabeza(ptr_lista_entero *ptr_lista, int *ok)
 {
-    if(*ptr_lista == NULL){
+    if (*ptr_lista == NULL)
+    {
         *ok = 0;
         return;
     }
     ptr_lista_entero cabeza = *ptr_lista;
     ptr_lista_entero nueva_cabeza = cabeza->sig;
 
-    if(nueva_cabeza == cabeza){
+    if (nueva_cabeza == cabeza)
+    {
         *ptr_lista = NULL; // Solo queda un elemento en la lista
-    }else{
+    }
+    else
+    {
         ptr_lista_entero ultimo = cabeza;
         while (ultimo->sig != cabeza)
         {
@@ -131,21 +144,26 @@ void borrarCabeza(ptr_lista_entero *ptr_lista, int *ok)
 
 void borrarCola(ptr_lista_entero *ptr_lista, int *ok)
 {
-    if(*ptr_lista == NULL){
+    if (*ptr_lista == NULL)
+    {
         *ok = 0;
         return;
     }
 
     ptr_lista_entero actual = *ptr_lista;
     ptr_lista_entero anterior = NULL;
-    while(actual->sig != *ptr_lista){
+    while (actual->sig != *ptr_lista)
+    {
         anterior = actual;
         actual = actual->sig;
     }
-    if(anterior == NULL){
-        //Solo queda un elemento en la lista
+    if (anterior == NULL)
+    {
+        // Solo queda un elemento en la lista
         *ptr_lista = NULL;
-    }else{
+    }
+    else
+    {
         anterior->sig = *ptr_lista;
     }
     free(actual);
@@ -154,7 +172,8 @@ void borrarCola(ptr_lista_entero *ptr_lista, int *ok)
 
 ptr_lista_entero quitarNCabeza(ptr_lista_entero *ptr_lista, int n, int *m)
 {
-    if(*ptr_lista == NULL){
+    if (*ptr_lista == NULL)
+    {
         *m = 0;
         return NULL;
     }
@@ -170,13 +189,17 @@ ptr_lista_entero quitarNCabeza(ptr_lista_entero *ptr_lista, int n, int *m)
     *m = i;
     cabeza->sig = actual;
 
-    if(actual == cabeza){
-        //Se han extraido todos los elementos de la lista
+    if (actual == cabeza)
+    {
+        // Se han extraido todos los elementos de la lista
         *ptr_lista = NULL;
-    }else{
+    }
+    else
+    {
         *ptr_lista = actual;
         ptr_lista_entero ultimo = actual;
-        while(ultimo->sig != cabeza){
+        while (ultimo->sig != cabeza)
+        {
             ultimo = ultimo->sig;
         }
         ultimo->sig = actual;
