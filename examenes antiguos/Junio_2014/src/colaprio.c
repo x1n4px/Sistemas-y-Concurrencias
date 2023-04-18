@@ -117,12 +117,8 @@ void Ejecutar(TColaPrio *cp, int prio){
 				ptr = ant->sig;
 			}
 		}else{
-			ant = ptr;
+			ant = ptr; 
 			ptr = ptr->sig;
 		}
 	}
-
-
-
-
 }
