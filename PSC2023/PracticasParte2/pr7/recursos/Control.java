@@ -22,7 +22,7 @@ public class Control {
 		}
 		//si no hay recursos disponibles suficientes nos bloqueamos
 		while(num>numRec) {
-			System.out.println("El proceso "+id+" espera recursos");
+			System.out.println("El proceso "+id+" espera recursos, num: "+ num + ": numRec: "+numRec);
 			wait();
 		}
 		numRec-=num;

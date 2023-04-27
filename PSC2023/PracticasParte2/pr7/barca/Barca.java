@@ -1,5 +1,7 @@
 package pr7.barca;
 
+import java.util.concurrent.Semaphore;
+
 public class Barca extends Thread {
 
 	private static final int C = 4;
@@ -7,6 +9,8 @@ public class Barca extends Thread {
 	private int numIphone = 0;
 	private boolean puerta = true;
 	private boolean viaje = false;
+
+	private Semaphore coche = new Semaphore(1, false);
 
 	/**
 	 * Un estudiante con m�vil android llama a este m�todo cuando quiere cruzar
@@ -18,6 +22,7 @@ public class Barca extends Thread {
 	 */
 
 	public synchronized void android(int id) throws InterruptedException {
+		coche.
 		while (!puerta || numAndroid + numIphone == C || numIphone == 3 || (numIphone == 1 && numAndroid == 2))
 			wait();
 		numAndroid++;

@@ -34,7 +34,7 @@ public class Nido {
 		hayEspacio.acquire();
 		mutex.acquire();		 
 		numB++;
-		System.out.println("El papa " + id + " ha añadido un bichito. Hay " + numB);
+		System.out.println("El papa " + id + " ha aï¿½adido un bichito. Hay " + numB);
 		if(numB>0)hayComida.release();
 		if(numB<MAX)hayEspacio.release();
 		
