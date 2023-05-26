@@ -1,0 +1,37 @@
+Asiento: 1 Destino:Aeropuerto
+Asiento: 3 Destino:Aeropuerto
+Asiento: 7 Destino:Fuengirola
+Asiento: 10 Destino:Torremolinos
+Asiento: 11 Destino:Aeropuerto
+***************************************************
+Ti to ti: Aeropuerto - se han bajado 3 pasajeros
+Asiento: 7 Destino:Fuengirola
+Asiento: 10 Destino:Torremolinos
+***************************************************
+El asiento 10 ya estaba ocupado, no se sube el pasajero
+Asiento: 5 Destino:Fuengirola
+Asiento: 7 Destino:Fuengirola
+Asiento: 9 Destino:Plaza_Mayor
+Asiento: 10 Destino:Torremolinos
+Asiento: 19 Destino:Plaza_Mayor
+***************************************************
+Ti to ti: Plaza_Mayor - se han bajado 2 pasajeros
+Asiento: 5 Destino:Fuengirola
+Asiento: 7 Destino:Fuengirola
+Asiento: 10 Destino:Torremolinos
+***************************************************
+Ti to ti: Los_Alamos - se han bajado 0 pasajeros
+Asiento: 5 Destino:Fuengirola
+Asiento: 7 Destino:Fuengirola
+Asiento: 10 Destino:Torremolinos
+***************************************************
+Ti to ti: Torremolinos - se han bajado 1 pasajeros
+Asiento: 5 Destino:Fuengirola
+Asiento: 7 Destino:Fuengirola
+***************************************************
+Tren entrando a cochera - Quedan 2 pasajeros
+Tren vacío
+***************************************************
+Regitro de pasajeros que no bajaron antes de llegar a la cochera:
+ Asiento: 5 Destino:Fuengirola
+Asiento: 7 Destino:Fuengirola

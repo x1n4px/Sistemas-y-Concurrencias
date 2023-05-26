@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ExJun2017C",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ExJun2017C::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ExJun2017C-Debug-18777e4df5a53bfe5f89.json",
+					"name" : "ExJun2017C",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/in4p/git/Sistemas-y-Concurrencias/PSC2023/PreparacionExamenJunio2023/ExJun2017C/cmake-build-debug",
+		"source" : "/home/in4p/git/Sistemas-y-Concurrencias/PSC2023/PreparacionExamenJunio2023/ExJun2017C"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
