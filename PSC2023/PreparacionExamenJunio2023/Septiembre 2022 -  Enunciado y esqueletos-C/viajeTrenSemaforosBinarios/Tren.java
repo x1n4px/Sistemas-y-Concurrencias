@@ -14,7 +14,7 @@ public class Tren {
 		maquinistaSemaphore = new Semaphore(0);
 		mutex = new Semaphore(1);
 		pasajerosEnVagon = 0;
- 	}
+	}
 
 
 
@@ -55,13 +55,13 @@ public class Tren {
 
 	}
 
-	 void empiezaViaje() throws InterruptedException {
-		 System.out.println("Maquinista: Esperando a que el tren esté lleno...");
-		 maquinistaSemaphore.acquire(); // Espera a que el tren esté lleno
-		 System.out.println("Maquinista: Comienza el viaje");
-		 Thread.sleep(1000); // Simulación de tiempo de inicio del viaje
+	void empiezaViaje() throws InterruptedException {
+		System.out.println("Maquinista: Esperando a que el tren esté lleno...");
+		maquinistaSemaphore.acquire(); // Espera a que el tren esté lleno
+		System.out.println("Maquinista: Comienza el viaje");
+		Thread.sleep(1000); // Simulación de tiempo de inicio del viaje
 
-	 }
+	}
 
 
 	public void finViaje() throws InterruptedException {

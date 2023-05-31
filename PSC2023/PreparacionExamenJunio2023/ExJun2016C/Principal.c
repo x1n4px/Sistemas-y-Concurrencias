@@ -11,11 +11,23 @@
 
 
 // Lee el fichero y lo introduce en la lista
-void cargarFichero (char * nombreFich, TListaJugadores *lj)
+void cargarFichero (char *nombreFich, TListaJugadores *lj)
 {
+    FILE *archivo = fopen(nombreFich, "rb");
 
-	
+    if(archivo == NULL){
+        printf("No se pudo abrir el fichero\n");
+        return;No se pudo abrir el fichero
 
+    }else{
+        int num;
+        while (fread(&num, sizeof(int), 1, archivo) == 1){
+            fread(&num, sizeof(int), 1, archivo);
+            insertar(&*lj, num);
+            fread(&num, sizeof(unsigned int), 1, archivo);
+        }
+        fclose(archivo);
+    }
 }
 
 
@@ -30,7 +42,7 @@ int main(){
 
 	recorrer(lj);
 	fflush(stdout);
-	printf("Introduce un número de goles: \n");
+	printf("Introduce un nï¿½mero de goles: \n");
 	fflush(stdout);
 	scanf("%d",&num_goles);
 
@@ -41,7 +53,7 @@ int main(){
 	printf("Hay un total de %d jugadores\n",longitud(lj));
 	fflush(stdout);
 
-	printf ("El jugador que más goles ha marcado es el que tiene ID: %d",maximo(lj));
+	printf ("El jugador que mï¿½s goles ha marcado es el que tiene ID: %d",maximo(lj));
 	fflush(stdout);
 	destruir (&lj);
 

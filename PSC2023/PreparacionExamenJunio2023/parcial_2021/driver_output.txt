@@ -1,0 +1,27 @@
+Inicializamos infraestructura y mostramos
+Infra 0 cpu Disp 5 vnfs:
+Infra 1 cpu Disp 5 vnfs:
+Infra 2 cpu Disp 5 vnfs:
+Infra 3 cpu Disp 5 vnfs:
+Infra 4 cpu Disp 5 vnfs:
+Insertamos v1 - cpu=3
+Insertamos v2 - cpu=5
+Insertamos v3 - cpu=1
+Insertamos v4 - cpu=2
+No se ha insertado v5 - cpu=6
+Insertamos v6 - cpu=4
+Mostramos despues de las inserciones:
+Infra 0 cpu Disp 1 vnfs: (v3, 1)	(v1, 3)
+Infra 1 cpu Disp 0 vnfs: (v2, 5)
+Infra 2 cpu Disp 3 vnfs: (v4, 2)
+Infra 3 cpu Disp 1 vnfs: (v6, 4)
+Infra 4 cpu Disp 5 vnfs:
+Liberamos los recursos de v1 y mostramos
+Infra 0 cpu Disp 4 vnfs: (v3, 1)
+Infra 1 cpu Disp 0 vnfs: (v2, 5)
+Infra 2 cpu Disp 3 vnfs: (v4, 2)
+Infra 3 cpu Disp 1 vnfs: (v6, 4)
+Infra 4 cpu Disp 5 vnfs:
+VNFs almacenadas en deployedVNFs.dat
+Destruimos la infraestructura y mostramos
+No hay nodos en la infraestructura

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="28cde45f-1d49-40a5-b421-6c56b68e2466" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../ExJun2014C/colaprio.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ExJun2014C/colaprio.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ExJun2014C/principal.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ExJun2014C/principal.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ExJun2016C/ListaJugadores.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ExJun2016C/ListaJugadores.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ExJun2016C/Principal.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ExJun2016C/Principal.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ExJun2017C/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ExJun2017C/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ExJun2019C/Stack.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ExJun2019C/Stack.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ExJun2019C/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ExJun2019C/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ExJun2019C/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ExJun2019C/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ExJun2019C/cmake-build-debug/CMakeFiles/ExJun2019C.dir/Stack.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ExJun2019C/cmake-build-debug/CMakeFiles/ExJun2019C.dir/Stack.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ExJun2019C/cmake-build-debug/ExJun2019C" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ExJun2019C/cmake-build-debug/ExJun2019C" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ExJun2019C/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ExJun2019C/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ExSept2014C/Sistema.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ExSept2014C/Sistema.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ExSept2019C/Componentes.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ExSept2019C/Componentes.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ExSept2019C/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ExSept2019C/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ExSept2019C/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ExSept2019C/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ExSept2019C/cmake-build-debug/CMakeFiles/ExSept2019C.dir/Componentes.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ExSept2019C/cmake-build-debug/CMakeFiles/ExSept2019C.dir/Componentes.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ExSept2019C/cmake-build-debug/ExSept2019C" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ExSept2019C/cmake-build-debug/ExSept2019C" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ExSept2019C/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ExSept2019C/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../practicaExtra/practicaExtra/.project" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../practicaExtra/practicaExtra/.project" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="ProjectId" id="2QSgoXXTaUTOwfNZ0l5gjzZt3FF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/in4p/git/Sistemas-y-Concurrencias/PSC2023/PreparacionExamenJunio2023/ExParcial2023Locks/esqueleto(Semaforos)"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="esqueleto.Driver" />
+      <module name="esqueleto" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="esqueleto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Driver" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="28cde45f-1d49-40a5-b421-6c56b68e2466" name="Changes" comment="" />
+      <created>1685352572260</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1685352572260</updated>
+    </task>
+    <servers />
+  </component>
+</project>

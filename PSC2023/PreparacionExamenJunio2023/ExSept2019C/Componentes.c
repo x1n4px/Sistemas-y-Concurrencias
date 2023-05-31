@@ -26,13 +26,11 @@ int Lista_Vacia(Lista lista){
 y devuelve el numero de elementos de dicha lista.
 */
 int Num_Elementos(Lista  lista){
-    Lista ptr;
-    ptr = lista;
     int contador = 0;
 
-    while(ptr != NULL) {
+    while(lista != NULL) {
         contador++;
-       ptr = ptr->sig;
+       lista = lista->sig;
     }
 
     return contador;
@@ -59,11 +57,16 @@ void Lista_Imprimir( Lista lista){
     Lista ptr;
     ptr = lista;
 
-
-    while(ptr->sig != NULL) {
-        printf("Producto con código %d tiene una descripcion: %s.\n", ptr->codigoComponente, ptr->textoFabricante);
-        ptr = ptr->sig;
+    if(Lista_Vacia(lista)) {
+        printf("Lista vacia\n");
+    }else{
+        while(ptr != NULL) {
+            printf("Producto %d tiene una descripcion: %s.\n", ptr->codigoComponente, ptr->textoFabricante);
+            ptr = ptr->sig;
+        }
     }
+
+
 }
 
 /*
@@ -96,12 +99,7 @@ La funcion Lista_Crear crea una lista enlazada vacia
 de nodos de tipo Componente.
 */
 Lista Lista_Crear() {
-    Lista lista = (Lista)malloc(sizeof(struct elemLista));
-    if(lista != NULL){
-        lista->codigoComponente = 0;
-        memset(lista->textoFabricante, 0, sizeof(lista->textoFabricante));
-        lista->sig = NULL;
-    }
+    Lista lista = NULL;
     return lista;
 }
 
@@ -112,23 +110,25 @@ la lista con estos datos.
 */
 void Lista_Agregar(Lista *lista, long codigo, char* textoFabricante){
     Lista ptr = *lista;
-    while(ptr != NULL){
-        if(ptr->codigoComponente == codigo){
-            return ;
-        }
-        ptr = ptr->sig;
-    }
+    Lista nuevo = malloc(sizeof(struct elemLista));
 
-    Lista nuevo = (Lista)malloc(sizeof(struct elemLista));
     if(nuevo == NULL){
-        return ;
+        perror("ERROR: No se pudo reservar memoria");
+    }else{
+        nuevo->codigoComponente = codigo;
+        strcpy(nuevo->textoFabricante, textoFabricante);
+        nuevo->sig = NULL;
+        if(*lista == NULL){
+            *lista = nuevo;
+        }else{
+            while(ptr->sig != NULL){
+                ptr = ptr->sig;
+            }
+            ptr->sig = nuevo;
+        }
+
     }
 
-    nuevo->codigoComponente = codigo;
-    strcpy(nuevo->textoFabricante, textoFabricante);
-    nuevo->sig = *lista;
-
-    *lista = nuevo;
 
 }
 
@@ -137,18 +137,19 @@ Lista_Extraer toma como parametro un puntero a una Lista y elimina el
 Componente que se encuentra en su ultima posicion.
 */
 void Lista_Extraer(Lista *lista){
-    Lista ptr ;
-    ptr = *(lista);
+    Lista ptr = *lista;
 
     if(ptr == NULL || ptr->sig == NULL){
         return;
     }
+
 
     Lista penultimo = *(lista);
 
     while(penultimo->sig->sig != NULL) {
         penultimo = penultimo->sig;
     }
+
 
     Lista ultimo = penultimo->sig;
     penultimo->sig = NULL;
@@ -161,14 +162,13 @@ Lista_Vaciar es una funcion que toma como parametro un puntero a una Lista
 y elimina todos sus Componentes.
 */
 void Lista_Vaciar(Lista *lista){
-    Lista ptr = lista;
+    Lista ptr;
 
-    while(ptr->sig != NULL) {
-
+    while(*lista != NULL) {
         ptr = *lista;
         printf("Eliminado el producto con codigo: %d\n", ptr->codigoComponente);
-
         *lista = (*lista)->sig;
         free(ptr);
+
     }
 }

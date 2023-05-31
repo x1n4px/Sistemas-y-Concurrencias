@@ -10,19 +10,17 @@
 
 // Creates an empty stack.
 T_Stack create() {
-    T_Stack nodo = (T_Stack)malloc(sizeof(struct Node));
+   /*T_Stack nodo = (T_Stack)malloc(sizeof(struct Node));
     if(nodo != NULL) {
         nodo->next = NULL;
         nodo->number = 0;
-    }
+    }*/
+   T_Stack nodo = NULL;
     return nodo;
 }
 
 // Returns true if the stack is empty and false in other case.
 int isEmpty(T_Stack q) {
-    T_Stack ptr;
-    ptr = q;
-
     if(q == NULL){
         return 1;
     }
@@ -31,113 +29,95 @@ int isEmpty(T_Stack q) {
 
 // Inserts a number into the stack.
 void push(T_Stack * pq, int operand) {
-    T_Stack nuevoDato = (T_Stack)malloc(sizeof(struct Node));
+    T_Stack nuevoDato = malloc(sizeof(struct Node));
+    T_Stack ptr;
 
-    if(nuevoDato != NULL) {
-        nuevoDato->next = NULL;
+    if(nuevoDato == NULL){
+        perror("ERROR: No se puede reservar memoria");
+    }else{
         nuevoDato->number = operand;
+        nuevoDato->next = NULL;
+        if(*pq == NULL){
+            *pq = nuevoDato;
+        }else{
+            ptr = *pq;
+            while(ptr->next != NULL){
+                ptr = ptr->next;
+            }
+            ptr->next = nuevoDato;
+        }
     }
-
-    if(pq == NULL){
-        pq = nuevoDato;
-        return;
-    }
-
-    T_Stack ptr = pq;
-    while(ptr->next != NULL){
-        ptr = ptr->next;
-    }
-    ptr->next = nuevoDato;
 }
 
 // "Inserts" an operator into the stack and operates.
 // Returns true if everything OK or false in other case.
 int pushOperator(T_Stack * pq, char operator) {
-    T_Stack ptr = pq;
-    if(ptr == NULL || ptr->next == NULL){
-        printf("La lista no tiene suficientes elementos.\n");
-        return 0;
-    }
-    int ultimo,penultimo, operacion;
+    T_Stack ptr = *pq, ant = NULL;
+    int ok = 0, res = 0;
 
-    while(ptr->next->next != NULL){
-        ptr = ptr->next;
-    }
-
-    ultimo = ptr->next->number;
-    penultimo = ptr->number;
-
-    free(ptr->next);
-    ptr->next = NULL;
-
-    T_Stack valorOperacion = (T_Stack) malloc(sizeof(struct Node));
-    if(valorOperacion == NULL) {
-        return 0;
-    }
-
-
-    switch(operator) {
-        case '+':
-            valorOperacion->next = NULL;
-            valorOperacion->number = ultimo + penultimo;
-            break;
-        case '-':
-            valorOperacion->next = NULL;
-            valorOperacion->number = ultimo - penultimo;
-            break;
-        case '*':
-            valorOperacion->next = NULL;
-            valorOperacion->number = ultimo * penultimo;
-            break;
-        case '/':
-            valorOperacion->next = NULL;
-            valorOperacion->number = ultimo / penultimo;
-            break;
-        default:
-            printf("Error al operar.\n");
-            return 0;
-    }
-
-    //Encontrar el ultimo nodo de la lista
     while(ptr->next != NULL){
+        ant = ptr;
         ptr = ptr->next;
     }
-    ptr->next = valorOperacion;
-    return 1;
+    if(ptr && ant){
+        ok = 1;
+        switch (operator) {
+            case '+':
+                res = ant->number + ptr->number;
+                break;
+            case '-':
+                res = ant->number - ptr->number;
+                break;
+            case '*':
+                res = ant->number * ptr->number;
+                break;
+            case '/':
+                res = ant->number / ptr->number;
+                break;
+            default:
+                ok = 0;
+         }
+         if(ok) {
+             ant->number = res;
+             ant->next = NULL;
+             free(ptr);
+         }
+
+    }
+    return ok;
 }
 
 // Puts into data the number on top of the stack, and removes the top.
 // Returns true if everything OK or false in other case.
 int pop(T_Stack * pq, int * data) {
-    T_Stack ptr = pq;
-    if(ptr == NULL || ptr->next == NULL){
-        printf("La lista no tiene suficientes elementos.\n");
-        return 0;
+    T_Stack ptr = *pq, ant = NULL;
+    int ok = 0;
+
+    if(!isEmpty(ptr)){
+        while(ptr->next != NULL){
+            ant = ptr;
+            ptr = ptr->next;
+        }
+        *data = ptr->number;
+        if(ant == NULL){
+            *pq = NULL;
+        }else{
+            ant->next = NULL;
+        }
+        free(ptr);
+        ok = 1;
     }
 
-    while(ptr->next != NULL){
-        ptr = ptr->next;
-    }
-
-    *data = ptr->number;
-
-    free(ptr);
-
-    return 1;
-
-
-
+    return ok;
 }
 
 // Frees the memory of a stack and sets it to empty.
 void destroy(T_Stack * pq) {
-    T_Stack current = *pq;
-    T_Stack next;
+    T_Stack ptr;
 
-    while(current != NULL){
-        next = current->next;
-        free(current);
-        current = next;
+    while(*pq != NULL){
+        ptr = *pq;
+        *pq = (*pq)->next;
+        free(ptr);
     }
-    *pq = NULL;
-}
+ }

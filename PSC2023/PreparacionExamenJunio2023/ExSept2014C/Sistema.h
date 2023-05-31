@@ -2,7 +2,20 @@
 #define __SISTEMA__
 
 // Definición del tipo LSistema
+typedef struct TProc *LSistema;
+typedef struct THebra *Hebra;
 
+struct THebra {
+    unsigned int pri;
+    char id[10];
+    Hebra sig;
+};
+
+struct TProc {
+    unsigned int num;
+    LSistema sig;
+    Hebra hebra;
+};
 
  
 //Crea una lista vacia

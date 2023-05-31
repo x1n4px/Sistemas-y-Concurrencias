@@ -1,0 +1,3 @@
+/home/in4p/git/Sistemas-y-Concurrencias/PSC2023/PreparacionExamenJunio2023/Septiembre 2022 -  Enunciado y esqueletos-C/C/cmake-build-debug/CMakeFiles/C.dir
+/home/in4p/git/Sistemas-y-Concurrencias/PSC2023/PreparacionExamenJunio2023/Septiembre 2022 -  Enunciado y esqueletos-C/C/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/in4p/git/Sistemas-y-Concurrencias/PSC2023/PreparacionExamenJunio2023/Septiembre 2022 -  Enunciado y esqueletos-C/C/cmake-build-debug/CMakeFiles/rebuild_cache.dir

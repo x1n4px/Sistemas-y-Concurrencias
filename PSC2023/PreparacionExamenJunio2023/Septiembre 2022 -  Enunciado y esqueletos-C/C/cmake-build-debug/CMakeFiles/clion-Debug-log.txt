@@ -1,0 +1,10 @@
+/home/in4p/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/231.9011.31/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/in4p/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/231.9011.31/bin/ninja/linux/x64/ninja -G Ninja -S "/home/in4p/git/Sistemas-y-Concurrencias/PSC2023/PreparacionExamenJunio2023/Septiembre 2022 -  Enunciado y esqueletos-C/C" -B "/home/in4p/git/Sistemas-y-Concurrencias/PSC2023/PreparacionExamenJunio2023/Septiembre 2022 -  Enunciado y esqueletos-C/C/cmake-build-debug"
+-- The C compiler identification is GNU 13.1.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/in4p/git/Sistemas-y-Concurrencias/PSC2023/PreparacionExamenJunio2023/Septiembre 2022 -  Enunciado y esqueletos-C/C/cmake-build-debug
