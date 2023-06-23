@@ -10,42 +10,30 @@
 
 // Creates an empty stack.
 T_Stack create() {
-   /*T_Stack nodo = (T_Stack)malloc(sizeof(struct Node));
-    if(nodo != NULL) {
-        nodo->next = NULL;
-        nodo->number = 0;
-    }*/
-   T_Stack nodo = NULL;
-    return nodo;
+    T_Stack stack = NULL;
+    return stack;
 }
 
 // Returns true if the stack is empty and false in other case.
 int isEmpty(T_Stack q) {
-    if(q == NULL){
+    if(q == NULL) {
         return 1;
+    }else{
+        return 0;
     }
-    return 0;
 }
 
 // Inserts a number into the stack.
 void push(T_Stack * pq, int operand) {
-    T_Stack nuevoDato = malloc(sizeof(struct Node));
-    T_Stack ptr;
-
-    if(nuevoDato == NULL){
-        perror("ERROR: No se puede reservar memoria");
+    if(*pq == NULL){
+        (*pq)->number = operand;
+        (*pq)->next = NULL;
     }else{
-        nuevoDato->number = operand;
-        nuevoDato->next = NULL;
-        if(*pq == NULL){
-            *pq = nuevoDato;
-        }else{
-            ptr = *pq;
-            while(ptr->next != NULL){
-                ptr = ptr->next;
-            }
-            ptr->next = nuevoDato;
+        while((*pq)->next != NULL) {
+            *pq = (*pq)->next;
         }
+        (*pq)->next->number = operand;
+        (*pq)->next->next = NULL;
     }
 }
 
@@ -55,11 +43,12 @@ int pushOperator(T_Stack * pq, char operator) {
     T_Stack ptr = *pq, ant = NULL;
     int ok = 0, res = 0;
 
-    while(ptr->next != NULL){
+    while(ptr->next != NULL) {
         ant = ptr;
         ptr = ptr->next;
     }
-    if(ptr && ant){
+
+    if(ptr && ant) {
         ok = 1;
         switch (operator) {
             case '+':
@@ -74,15 +63,14 @@ int pushOperator(T_Stack * pq, char operator) {
             case '/':
                 res = ant->number / ptr->number;
                 break;
-            default:
-                ok = 0;
-         }
-         if(ok) {
-             ant->number = res;
-             ant->next = NULL;
-             free(ptr);
-         }
+            default: ok = 0;
+        }
 
+        if(ok) {
+            ant->number = res;
+            ant->next = NULL;
+            free(ptr);
+        }
     }
     return ok;
 }
@@ -90,16 +78,16 @@ int pushOperator(T_Stack * pq, char operator) {
 // Puts into data the number on top of the stack, and removes the top.
 // Returns true if everything OK or false in other case.
 int pop(T_Stack * pq, int * data) {
-    T_Stack ptr = *pq, ant = NULL;
     int ok = 0;
+    T_Stack ptr = *pq, ant = NULL;
 
-    if(!isEmpty(ptr)){
-        while(ptr->next != NULL){
+    if(!isEmpty(ptr)) {
+        while (ptr->next != NULL) {
             ant = ptr;
             ptr = ptr->next;
         }
         *data = ptr->number;
-        if(ant == NULL){
+        if(ant == NULL) {
             *pq = NULL;
         }else{
             ant->next = NULL;
@@ -107,7 +95,6 @@ int pop(T_Stack * pq, int * data) {
         free(ptr);
         ok = 1;
     }
-
     return ok;
 }
 
@@ -115,7 +102,7 @@ int pop(T_Stack * pq, int * data) {
 void destroy(T_Stack * pq) {
     T_Stack ptr;
 
-    while(*pq != NULL){
+    while((*pq) != NULL){
         ptr = *pq;
         *pq = (*pq)->next;
         free(ptr);

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="761debca-6512-4f69-a1e9-6387a9123eb9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../ExDic2017C/Principal.c" beforeDir="false" afterPath="$PROJECT_DIR$/../ExDic2017C/Principal.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExDic2017C/colaPrioridad.h" beforeDir="false" afterPath="$PROJECT_DIR$/../ExDic2017C/colaPrioridad.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExJun2016C/ListaJugadores.c" beforeDir="false" afterPath="$PROJECT_DIR$/../ExJun2016C/ListaJugadores.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExJun2016C/Principal.c" beforeDir="false" afterPath="$PROJECT_DIR$/../ExJun2016C/Principal.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExJun2016C/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../ExJun2016C/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExJun2016C/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../ExJun2016C/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExJun2016C/cmake-build-debug/CMakeFiles/ExJun2016C.dir/ListaJugadores.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../ExJun2016C/cmake-build-debug/CMakeFiles/ExJun2016C.dir/ListaJugadores.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExJun2016C/cmake-build-debug/CMakeFiles/ExJun2016C.dir/Principal.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../ExJun2016C/cmake-build-debug/CMakeFiles/ExJun2016C.dir/Principal.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExJun2016C/cmake-build-debug/ExJun2016C" beforeDir="false" afterPath="$PROJECT_DIR$/../ExJun2016C/cmake-build-debug/ExJun2016C" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExJun2016C/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../ExJun2016C/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExJun2019C/Stack.c" beforeDir="false" afterPath="$PROJECT_DIR$/../ExJun2019C/Stack.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExJun2019C/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../ExJun2019C/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExJun2019C/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../ExJun2019C/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExJun2019C/cmake-build-debug/CMakeFiles/ExJun2019C.dir/Stack.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../ExJun2019C/cmake-build-debug/CMakeFiles/ExJun2019C.dir/Stack.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExJun2019C/cmake-build-debug/ExJun2019C" beforeDir="false" afterPath="$PROJECT_DIR$/../ExJun2019C/cmake-build-debug/ExJun2019C" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExJun2019C/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../ExJun2019C/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExSept2017JAVA/BabuinoNS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExSept2017JAVA/BabuinoSN.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExSept2017JAVA/Cuerda.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExSept2017JAVA/Principal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExSept2019C/Componentes.c" beforeDir="false" afterPath="$PROJECT_DIR$/../ExSept2019C/Componentes.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExSept2019C/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../ExSept2019C/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExSept2021C/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../ExSept2021C/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Junio 2022 -  Enunciado y esqueletos-JAVA/esqueleto-español/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Junio 2022 -  Enunciado y esqueletos-JAVA/esqueleto-español/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Junio 2022 -  Enunciado y esqueletos-JAVA/esqueleto-español/SupermercadoMonitores.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Junio 2022 -  Enunciado y esqueletos-JAVA/esqueleto-español/SupermercadoMonitores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Junio2017EsqJAVA/Guarderia.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Junio2017EsqJAVA/Guarderia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practicaExtra/practicaExtra/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practicaExtra/practicaExtra/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practicaExtra/practicaExtra/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practicaExtra/practicaExtra/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practicaExtra/practicaExtra/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practicaExtra/practicaExtra/src/practicaExtra/GUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practicaExtra/practicaExtra/src/practicaExtra/pantall.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2RZS2167z7c4PKPe2Xv69wGdaoW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "/home/in4p/git/Sistemas-y-Concurrencias/PSC2023/PreparacionExamenJunio2023/ExJun2023Java/workspacemayo2023/workspacemayo2023/maletas Locks",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="761debca-6512-4f69-a1e9-6387a9123eb9" name="Changes" comment="" />
+      <created>1687455899421</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1687455899421</updated>
+      <workItem from="1687455900423" duration="12000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

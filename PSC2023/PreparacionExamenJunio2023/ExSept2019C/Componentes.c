@@ -12,14 +12,11 @@ La rutina Lista_Vacia devuelve 1 si la lista que se le pasa
 como parametro esta vacia y 0 si no lo esta.
 */
 int Lista_Vacia(Lista lista){
-    Lista ptr ;
-    ptr = lista;
-
-    if(ptr == NULL){
+    if(lista == NULL){
         return 1;
+    }else{
+        return 0;
     }
-
-    return  0;
 }
 
 /*Num_Elementos es una funcion a la que se le pasa un puntero a una lista
@@ -54,19 +51,17 @@ La funcion Lista_Imprimir se encarga de imprimir por pantalla la lista
 enlazada completa que se le pasa como parametro.
 */
 void Lista_Imprimir( Lista lista){
-    Lista ptr;
-    ptr = lista;
 
     if(Lista_Vacia(lista)) {
         printf("Lista vacia\n");
     }else{
-        while(ptr != NULL) {
-            printf("Producto %d tiene una descripcion: %s.\n", ptr->codigoComponente, ptr->textoFabricante);
-            ptr = ptr->sig;
+        printf("-----------------LISTA DE COMPONENTES-------------------\n");
+        while(lista != NULL) {
+            printf("Producto %d tiene una descripcion: %s.\n", lista->codigoComponente,  lista->textoFabricante);
+           lista = lista->sig;
         }
     }
-
-
+    printf("\n");
 }
 
 /*
@@ -77,20 +72,24 @@ el código y el texto de la componente correspondiente.
 */
 void Lista_Salvar( Lista  lista) {
     FILE *archivo = fopen("examen.dat", "wb");
+    int longitud;
 
     if(archivo == NULL){
         printf("Error al abrir el fichero.\n");
         return;
+    }else{
+         while(lista != NULL){
+             longitud = strlen(lista->textoFabricante);
+            fwrite(&(lista->codigoComponente), sizeof(long), 1, archivo);
+             fwrite(&longitud, sizeof(int), 1, ptr);
+            fwrite(&(lista->textoFabricante), sizeof(char), longitud, archivo);
+             lista = lista->sig;
+        }
+        printf("Archivo guardado con exito\n");
+        fclose(archivo);
     }
 
-    Lista nodoActual = lista;
-    while(nodoActual != NULL){
-        fwrite(&nodoActual->codigoComponente, sizeof(long), 1, archivo);
-        fwrite(&nodoActual->textoFabricante, sizeof(char), MAX_CADENA, archivo);
-        nodoActual = nodoActual->sig;
-    }
-    printf("Archivo guardado con exito\n");
-    fclose(archivo);
+
  }
 
 
@@ -138,23 +137,16 @@ Componente que se encuentra en su ultima posicion.
 */
 void Lista_Extraer(Lista *lista){
     Lista ptr = *lista;
+    Lista ant = NULL;
 
-    if(ptr == NULL || ptr->sig == NULL){
-        return;
+    if(*lista != NULL){
+        while(ptr->sig != NULL){
+            ant = ptr;
+            ptr = ptr->sig;
+        }
+        ant->sig = NULL;
+        free(ptr);
     }
-
-
-    Lista penultimo = *(lista);
-
-    while(penultimo->sig->sig != NULL) {
-        penultimo = penultimo->sig;
-    }
-
-
-    Lista ultimo = penultimo->sig;
-    penultimo->sig = NULL;
-
-    free(ultimo);
 }
 
 /*

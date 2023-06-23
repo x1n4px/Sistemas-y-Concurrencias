@@ -1,0 +1,26 @@
+# ninja log v5
+28	43	1686563903795815536	Esqueletos	ad8fc85b85e09dcb
+0	28	1686562454021517324	CMakeFiles/Esqueletos.dir/main.c.o	4cc9bb5ade8a65f6
+0	28	1686563903782482269	CMakeFiles/Esqueletos.dir/Imagenes.c.o	d5a468a8973465c4
+1	83	1687448739840715636	CMakeFiles/Esqueletos.dir/Imagenes.c.o	d5a468a8973465c4
+1	83	1687448739840715636	CMakeFiles/Esqueletos.dir/main.c.o	4cc9bb5ade8a65f6
+83	130	1687448739887381536	Esqueletos	ad8fc85b85e09dcb
+1	22	1687449069425890801	CMakeFiles/Esqueletos.dir/Imagenes.c.o	d5a468a8973465c4
+1	26	1687449069429224090	CMakeFiles/Esqueletos.dir/main.c.o	4cc9bb5ade8a65f6
+26	40	1687449069442557247	Esqueletos	ad8fc85b85e09dcb
+0	25	1687450795802366459	CMakeFiles/Esqueletos.dir/Imagenes.c.o	d5a468a8973465c4
+25	39	1687450795815699691	Esqueletos	ad8fc85b85e09dcb
+0	25	1687450925088030932	CMakeFiles/Esqueletos.dir/Imagenes.c.o	d5a468a8973465c4
+25	41	1687450925104697465	Esqueletos	ad8fc85b85e09dcb
+1	24	1687451127566383873	CMakeFiles/Esqueletos.dir/Imagenes.c.o	d5a468a8973465c4
+24	38	1687451127583050400	Esqueletos	ad8fc85b85e09dcb
+0	25	1687452239386587242	CMakeFiles/Esqueletos.dir/Imagenes.c.o	d5a468a8973465c4
+25	41	1687452239399920454	Esqueletos	ad8fc85b85e09dcb
+0	24	1687452309129288713	CMakeFiles/Esqueletos.dir/Imagenes.c.o	d5a468a8973465c4
+24	38	1687452309142621925	Esqueletos	ad8fc85b85e09dcb
+0	28	1687452332155746585	CMakeFiles/Esqueletos.dir/Imagenes.c.o	d5a468a8973465c4
+28	43	1687452332169079797	Esqueletos	ad8fc85b85e09dcb
+0	28	1687452390681999259	CMakeFiles/Esqueletos.dir/Imagenes.c.o	d5a468a8973465c4
+28	43	1687452390695332559	Esqueletos	ad8fc85b85e09dcb
+0	25	1687452761230427075	CMakeFiles/Esqueletos.dir/Imagenes.c.o	d5a468a8973465c4
+25	41	1687452761247093650	Esqueletos	ad8fc85b85e09dcb

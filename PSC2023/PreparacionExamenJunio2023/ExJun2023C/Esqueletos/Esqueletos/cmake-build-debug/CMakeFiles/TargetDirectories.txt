@@ -1,0 +1,3 @@
+/home/in4p/git/Sistemas-y-Concurrencias/PSC2023/PreparacionExamenJunio2023/ExJun2023C/Esqueletos/Esqueletos/cmake-build-debug/CMakeFiles/Esqueletos.dir
+/home/in4p/git/Sistemas-y-Concurrencias/PSC2023/PreparacionExamenJunio2023/ExJun2023C/Esqueletos/Esqueletos/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/in4p/git/Sistemas-y-Concurrencias/PSC2023/PreparacionExamenJunio2023/ExJun2023C/Esqueletos/Esqueletos/cmake-build-debug/CMakeFiles/rebuild_cache.dir

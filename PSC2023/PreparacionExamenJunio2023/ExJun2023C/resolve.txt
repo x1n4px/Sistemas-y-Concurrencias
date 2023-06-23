@@ -1,0 +1,232 @@
+
+/**
+ * @brief Inicializa la \p lista de imágenes vacía (0.25 pts.)
+ * @param lista Lista de entrada para ser inicializada.
+ */
+void inicializarListaImagenes(ListaImagenes *lista){
+    (*lista) = NULL;
+}
+
+
+/**
+ * @brief Se inserta una nueva imagen según orden de llegada, ¡si no está!, con el \p hascode y \p datos dados (1.75 pts). En caso de fallo al solicitar memoria, se sale del programa mostrando antes un mensaje de error.
+ * @param lista Lista de imágenes ya existente en el sistema.
+ * @param hashcode Identificador único de la imagen.
+ * @param datos Datos de la imagen, se deben copiar (incluye el carácter terminador)
+ * @return devuelve 0 si se puede insertar, 1 si no se puede insertar (duplicada).
+ */
+int insertarimagen(ListaImagenes *lista, int hashcode, char *datos){
+    ListaImagenes nuevaImagen = (ListaImagenes) malloc(sizeof (Imagen));
+    if(nuevaImagen == NULL){
+        printf("Error: No se pudo reservar memoria");
+        exit(-1);
+    }
+
+    //Asignar valores a la nueva imagen
+    nuevaImagen->hashCode = hashcode;
+    strcpy(nuevaImagen->imagen, datos);
+    nuevaImagen->sig = NULL;
+
+    //Verificar si la lista está vacía
+    if(*lista == NULL){
+        *lista = nuevaImagen;
+        return 0;
+    }
+
+    //Verificar si la imagen ya existe en la lista
+    ListaImagenes ptr = *lista;
+    while(ptr != NULL) {
+        if(ptr->hashCode == hashcode) {
+            free(nuevaImagen);  // La imagen ya existe, liberar memoria de la nueva imagen
+            return 1;  // Imagen duplicada, no se puede insertar
+        }
+        ptr = ptr->sig;
+    }
+
+    //La imagen no existe en la lista, agregar al final
+    ptr = *lista;
+    while (ptr->sig != NULL) {
+        ptr = ptr->sig;
+    }
+    ptr->sig = nuevaImagen;
+    return 0;
+}
+
+
+/**
+ * @brief Muestra las \p num primeras imágenes de la lista en orden de inserción (primero la más antigua). Si hay menos de \p num, las mostrará todas. Para cada imagen se debe mostrar el hascode y sólo los primeros 10 caracteres de sus datos (1 pt.).
+ * @param lista Lista de imágenes ya existente en el sistema.
+ * @param num Número máximo de imágenes a mostrar.
+ */
+void mostrarImagenes(ListaImagenes lista,int num){
+    int contador = 0;
+    if(lista == NULL) {
+        printf("Lista vacia");
+        return;
+    }
+    while(lista != NULL && contador < num) {
+        printf("hashcode %d datos: %.10s\n", lista->hashCode, lista->imagen);
+        contador++;
+        lista = lista->sig;
+    }
+}
+
+
+/**
+ * @brief Libera toda la memoria y deja la \p lista de imágenes vacía (1 pt.).
+ * @param lista Lista de imágenes ya existente en el sistema.
+ */
+void destruirImagenes(ListaImagenes *lista){
+    ListaImagenes actual = *lista;
+    ListaImagenes sig = NULL;
+
+    while (actual != NULL) {
+        sig = actual->sig;
+        free(actual);
+        actual = sig;
+    }
+    *lista = NULL;
+}
+
+
+
+/**
+ * @brief Extrae la imagen más antigua y la quita de \p lista (0.5 pt.).
+ * @param lista Lista de imágenes ya existente en el sistema.
+ * @return Un puntero a la imagen más antigua o NULL si no existe.
+ */
+Imagen* extraercabeza(ListaImagenes *lista){
+    if(*lista == NULL){
+        return NULL;
+    }
+
+    ListaImagenes cabeza = *lista;
+    *lista = cabeza->sig;
+    cabeza->sig = NULL;
+    return cabeza;
+}
+
+/**
+ * @brief Extrae una ListaImagenes que contiene las \p num imágenes más antiguas y las quita de \p lista (1.75 pt.).
+ * @param lista Lista de imágenes ya existente en el sistema.
+ * @param num Número mayor que cero que indica el máximo de imágenes a extraer en la lista.
+ * @return NULL si no hay ninguna imagen que extraer o una nueva lista con las, hasta \p num, imágenes más antiguas.
+*/
+ListaImagenes extraerLista(ListaImagenes *lista, int num){
+    if (*lista == NULL || num <= 0) {
+        return NULL;  // No hay imágenes para extraer o num es inválido
+    }
+
+    ListaImagenes nuevaLista = NULL;
+    ListaImagenes *punteroNuevaLista = &nuevaLista;
+    int contador = 0;
+
+    while (*lista != NULL && contador < num) {
+        Imagen *imagenExtraida = extraercabeza(lista);
+
+        if (imagenExtraida != NULL) {
+            *punteroNuevaLista = imagenExtraida;
+            punteroNuevaLista = &imagenExtraida->sig;
+            contador++;
+        }
+    }
+
+    return nuevaLista;
+}
+
+
+/**
+ * @brief Escribe en un fichero de texto parte de los datos de las imágenes almacenadas en la lista (1.75 pts.). El formato del fichero de texto será el siguiente: primero tendrá una cabecera con una descripción de los campos. Tras esta cabecera, una línea por cada imagen, ordenadas por antigüedad (las más antiguas primero). Solo se almacenan los 100 primeros bytes de cada imagen. Ejemplo:
+Hashcode;Imagen
+1286; fsgf8sddsdfsdfnlnlsdfoisdfolskndflsndfoinlksngm ,m oiw09tuqargnl ... ;
+864; aborasenhlakfhg,m ,miohlksndfgnqwoiut80q4760  oiqrnwglkjWR089TQH4OLGRN  ... ;
+9874; 09234jfilnalkfngoiahrñktnmp9ur0q914u63091u3504ypihnñFGBP90rueyphnñRKG ... ;
+ * @param filename Nombre del fichero para escribir en él.
+ * @param lista Lista de imágenes del sistema.
+ */
+void guardarRegistroImagenes(char *filename, ListaImagenes lista){
+    if (filename == NULL || lista == NULL) {
+        return;  // Verificar si los parámetros son válidos
+    }
+
+    FILE *fichero = fopen(filename, "w");
+    if (fichero == NULL) {
+        printf("Error al abrir el fichero %s\n", filename);
+        return;
+    }
+
+    // Escribir la cabecera en el fichero
+    fprintf(fichero, "Hashcode;Imagen\n");
+
+    // Recorrer la lista de imágenes y escribir cada imagen en una línea del fichero
+    Imagen *actual = lista;
+    while (actual != NULL) {
+        fprintf(fichero, "%d; %.100s\n", actual->hashCode, actual->imagen);
+        actual = actual->sig;
+    }
+
+    fclose(fichero);
+}
+
+
+/**
+ * @brief Lee de fichero binario los datos de imágenes y los carga para su uso. En caso de fallo al solicitar memoria, se sale del programa mostrando antes un mensaje de error. La lista actual puede no estar vacía, recuerda antes borrar todas las imágenes existentes (2.0 pts.).
+ *  En el fichero binario se almacena la información de cada imagen con el siguiente formato:
+ *      un entero con el hascode de la imagen;
+ *      una cadena de longitud IMAGE_SIZE bytes con la imagen. Esta cadena ya incluye el carácter terminador '\0'.
+ *  Se asume que las imágenes están guardadas por antigüedad, siendo las primeras las más antiguas.
+ * @param filename Nombre del fichero para leer de él.
+ * @param lista Lista en la que se almacenan las imágenes leídas.
+ */
+void cargarRegistroImagenes(char *filename, ListaImagenes *lista){
+    if (filename == NULL || lista == NULL) {
+        return;  // Verificar si los parámetros son válidos
+    }
+
+    FILE *fichero = fopen(filename, "rb");
+    if (fichero == NULL) {
+        printf("Error al abrir el fichero %s\n", filename);
+        return;
+    }
+
+    // Borrar todas las imágenes existentes en la lista
+    destruirImagenes(lista);
+
+    // Variables auxiliares para leer los datos del fichero
+    int hashCode;
+    char imagen[IMAGE_SIZE];
+
+    while (fread(&hashCode, sizeof(int), 1, fichero) == 1) {
+        if (fread(imagen, sizeof(char), IMAGE_SIZE, fichero) != IMAGE_SIZE) {
+            printf("Error al leer los datos del fichero %s\n", filename);
+            fclose(fichero);
+            return;
+        }
+
+        // Solicitar memoria para una nueva imagen
+        Imagen *nuevaImagen = (Imagen *)malloc(sizeof(Imagen));
+        if (nuevaImagen == NULL) {
+            printf("Error al solicitar memoria\n");
+            fclose(fichero);
+            return;
+        }
+
+        // Copiar los datos de la imagen leída a la nueva imagen
+        nuevaImagen->hashCode = hashCode;
+        strncpy(nuevaImagen->imagen, imagen, IMAGE_SIZE);
+        nuevaImagen->sig = NULL;
+
+        // Insertar la nueva imagen al final de la lista
+        if (*lista == NULL) {
+            *lista = nuevaImagen;
+        } else {
+            ListaImagenes ultimo = *lista;
+            while (ultimo->sig != NULL) {
+                ultimo = ultimo->sig;
+            }
+            ultimo->sig = nuevaImagen;
+        }
+    }
+
+    fclose(fichero);
+}

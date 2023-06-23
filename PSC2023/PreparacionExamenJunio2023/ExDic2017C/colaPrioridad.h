@@ -20,16 +20,16 @@ typedef Lista TColaPrio[L];
  * Inicializa el array con todas las listas vacias
  */
 
-void crear(char *nombre, TColaPrio cp);
+void crear( TColaPrio cp);
 
 /**
  * Dada una prioridad y un identificador de proceso,
- * lo añade AL FINAL de la lista que le corresponde.
+ * lo aï¿½ade AL FINAL de la lista que le corresponde.
  */
 void nuevoProceso (TColaPrio cp,int p, int id);
 
 /**
- * Elimina de la lista el proceso más prioritario que le corresponde ejecutarse.
+ * Elimina de la lista el proceso mï¿½s prioritario que le corresponde ejecutarse.
  * Se devuelve 0 si se ha podido ejecutar el proceso, y -1, en caso contrario.
  */
 
@@ -37,14 +37,14 @@ void nuevoProceso (TColaPrio cp,int p, int id);
 int ejecutaProceso(TColaPrio cp);
 
 /**
- * Dado un identificador de proceso devuelve la prioridad de éste.
- * Si el id del proceso no existe se devolverá -1.
+ * Dado un identificador de proceso devuelve la prioridad de ï¿½ste.
+ * Si el id del proceso no existe se devolverï¿½ -1.
  */
 int buscar(TColaPrio cp, int id);
 
 /*
  * Recorre la estructura para mostrar los procesos existentes
- * que están disponibles para ejecución ordenados por prioridad.
+ * que estï¿½n disponibles para ejecuciï¿½n ordenados por prioridad.
  *
  */
 void mostrar(TColaPrio cp);

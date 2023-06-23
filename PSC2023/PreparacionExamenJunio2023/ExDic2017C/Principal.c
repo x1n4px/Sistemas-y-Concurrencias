@@ -17,7 +17,7 @@ int main(){
 	 mostrar(colaPrio);
 
 	 printf("******************************\n\n");
-	 printf("añadimos nuevos procesos \n\n");
+	 printf("aï¿½adimos nuevos procesos \n\n");
 	 printf("******************************\n\n");
 
 	 int i = 0;

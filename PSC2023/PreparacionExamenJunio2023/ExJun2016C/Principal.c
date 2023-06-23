@@ -17,7 +17,7 @@ void cargarFichero (char *nombreFich, TListaJugadores *lj)
 
     if(archivo == NULL){
         printf("No se pudo abrir el fichero\n");
-        return;No se pudo abrir el fichero
+        return;
 
     }else{
         int num;
