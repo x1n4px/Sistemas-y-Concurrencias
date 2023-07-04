@@ -1,12 +1,3 @@
-/*
- ============================================================================
- Name        : Imagenes.c
- Authors     : Profesoras PSC
- Version     : 
- Copyright   : Your copyright notice
- Description : Ordinario Mayo 2023
- ============================================================================
- */
 
 
 #include "Imagenes.h"
@@ -22,7 +13,7 @@
  */
 void inicializarListaImagenes(ListaImagenes *lista){
     (*lista) = NULL;
-}
+ }
 
 
 /**
@@ -33,33 +24,37 @@ void inicializarListaImagenes(ListaImagenes *lista){
  * @return devuelve 0 si se puede insertar, 1 si no se puede insertar (duplicada).
  */
 int insertarimagen(ListaImagenes *lista, int hashcode, char *datos){
-    ListaImagenes aux = (ListaImagenes) malloc(sizeof(struct Imagen));
-    if(aux == NULL) {
+    ListaImagenes imagenNueva = (ListaImagenes)malloc(sizeof(struct Imagen));
+
+    if(imagenNueva == NULL) {
         return 0;
     }else{
-        aux->sig = NULL;
-        aux->hashCode = hashcode;
-        strcpy(aux->imagen, datos);
-        if(*lista == NULL) {
-           *lista = aux;
-           return 0;
+        imagenNueva->sig = NULL;
+        imagenNueva->hashCode = hashcode;
+        strcpy(imagenNueva->imagen, datos);
+        if(*lista == NULL) { // Lista vacia
+            *lista = imagenNueva;
+            return 0;
         }else{
             ListaImagenes ptr = *lista;
-            while ( ptr != NULL) {
+            // Comprobamos que no hay datos repetido
+            while( ptr != NULL) {
                 if(ptr->hashCode == hashcode) {
-                    free(aux);
+                    free(imagenNueva);
                     return 1;
                 }
                 ptr = ptr->sig;
             }
             ptr = *lista;
-            while (ptr->sig != NULL){
+            // Vamos al final la lista para asignar el nuevo nodo
+            while(ptr->sig != NULL) {
                 ptr = ptr->sig;
             }
-            ptr->sig = aux;
+            ptr->sig = imagenNueva;
             return 0;
         }
     }
+
 
 }
 
@@ -71,9 +66,11 @@ int insertarimagen(ListaImagenes *lista, int hashcode, char *datos){
  */
 void mostrarImagenes(ListaImagenes lista,int num){
     int contador = 0;
-    if(lista == NULL){return;}
-    while (lista != NULL && contador < num) {
-        printf("Imagen con hascode: %d, %.10s\n", lista->hashCode, lista->imagen);
+    if(lista == NULL) { //Lista vacia
+        return;
+    }
+    while(lista->sig != NULL || contador < num) {
+        printf("Hashcode: %d - Imagen: %.10s\n", lista->hashCode, lista->imagen);
         contador++;
         lista = lista->sig;
     }
@@ -85,15 +82,14 @@ void mostrarImagenes(ListaImagenes lista,int num){
  * @param lista Lista de imágenes ya existente en el sistema.
  */
 void destruirImagenes(ListaImagenes *lista){
-    ListaImagenes ptr = *lista;
-    ListaImagenes sig = NULL;
-    while((*lista)->sig != NULL) {
-        sig = ptr->sig;
-        free(ptr);
-       ptr = sig;
+    ListaImagenes ptr;
 
+    while ((*lista)->sig != NULL) {
+        ptr = *lista;
+        *lista = (*lista)->sig;
+        free(ptr);
     }
-    *lista = NULL;
+    (*lista) = NULL;
 }
 
 
@@ -104,15 +100,14 @@ void destruirImagenes(ListaImagenes *lista){
  * @return Un puntero a la imagen más antigua o NULL si no existe.
  */
 Imagen* extraercabeza(ListaImagenes *lista){
-
-    if(*lista == NULL) {
-        return NULL;
-    }
+    ListaImagenes cabeza;
     ListaImagenes ptr = *lista;
-    *lista = ptr->sig;
-    ptr->sig = NULL;
-    return ptr;
 
+    cabeza = ptr;
+    cabeza->sig = NULL;
+    ptr = ptr->sig;
+
+    return cabeza;
 
 }
 
@@ -123,25 +118,20 @@ Imagen* extraercabeza(ListaImagenes *lista){
  * @return NULL si no hay ninguna imagen que extraer o una nueva lista con las, hasta \p num, imágenes más antiguas.
 */
 ListaImagenes extraerLista(ListaImagenes *lista, int num){
-
-
-    if(*lista == NULL || num <= 0){
-        return NULL;
-    }
-
+    int contador = 0;
     ListaImagenes ptr = *lista;
     ListaImagenes prev = NULL;
-
-    while (ptr != NULL && num > 0) {
-        prev = ptr;
-        ptr = &(ptr->sig);
-        num--;
+    while(ptr->sig != NULL  ||  contador < num){
+       prev = ptr;
+       ptr = (ptr->sig);
+       contador++;
     }
 
-    if(prev != NULL){
+    if(prev != NULL) {
         prev->sig = NULL;
     }
     return ptr;
+
 }
 
 
@@ -155,16 +145,16 @@ Hashcode;Imagen
  * @param lista Lista de imágenes del sistema.
  */
 void guardarRegistroImagenes(char *filename, ListaImagenes lista){
-    FILE* archivo = fopen(filename, "wb");
-
+    FILE *archivo = fopen(filename, "wb");
     if(archivo == NULL) {
         perror("Error al abrir el fichero");
     }
-    fprintf(archivo, "Hashcode;Imagen\n"); //cabecera
+
+    fprintf(archivo, "Hashcode; Imagen\n");
 
     Imagen *actual = lista;
-    while (actual != NULL){
-        fprintf(archivo, "%d; %.100s\n", actual->hashCode, actual->imagen);
+    while (actual != NULL) {
+        fprintf(archivo, "%d; $.100s\n", actual->hashCode, actual->imagen);
         actual = actual->sig;
     }
     fclose(archivo);
@@ -181,41 +171,42 @@ void guardarRegistroImagenes(char *filename, ListaImagenes lista){
  * @param lista Lista en la que se almacenan las imágenes leídas.
  */
 void cargarRegistroImagenes(char *filename, ListaImagenes *lista){
-    FILE* archivo = fopen(filename, "rb");
+    FILE *archivo = fopen(filename, "wb");
     if(archivo == NULL) {
+        perror("Error al abrir el fichero");
         return;
     }
     destruirImagenes(lista);
 
-    int hascode;
+    int hashcode;
     char imagen[IMAGE_SIZE];
 
-    while (fread(&hascode, sizeof (int), 1, archivo) == 1) {
-        if(fread(imagen, sizeof (char), IMAGE_SIZE, archivo) != IMAGE_SIZE){
-            printf("Error al leer el fichero");
+    while(fread(&hashcode, sizeof (int), 1, archivo) == 1) {
+        if(fread(imagen, sizeof (char), IMAGE_SIZE, archivo) != IMAGE_SIZE) {
+            printf("ERROR al leer el fichero");
             fclose(archivo);
             return;
         }
 
-        //solicitar memoria para una nueva imagen
-        Imagen *nuevaImagen = (Imagen*) malloc(sizeof(Imagen));
-        if(nuevaImagen == NULL) {
+        //Solicitar memoria para una nueva imagen
+        Imagen *nuevaImagen = (Imagen*) malloc(sizeof (Imagen));
+        if(nuevaImagen == NULL)  {
             printf("ERROR al solicitar memoria\n");
             fclose(archivo);
             return;
         }
 
-        //copiar los datos de la imagen leida a la nueva imagen
-        nuevaImagen->hashCode = hascode;
+        //Copiar los datos de la imagen leida a la nueva imagen
+        nuevaImagen->hashCode = hashcode;
         strncpy(nuevaImagen->imagen, imagen, IMAGE_SIZE);
         nuevaImagen->sig = NULL;
 
         //Insertar la nueva imagen al final de la lista
-        if(*lista == NULL){
+        if(*lista == NULL) {
             *lista = nuevaImagen;
         }else{
             ListaImagenes ultimo = *lista;
-            while (ultimo->sig != NULL) {
+            while(ultimo->sig != NULL) {
                 ultimo = ultimo->sig;
             }
             ultimo->sig = nuevaImagen;

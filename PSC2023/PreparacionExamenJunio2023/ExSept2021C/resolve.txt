@@ -6,8 +6,13 @@
 /* 0.5 ptos: al salir de la cochera el tren está vacío (equivale a inicializar el tren) */
 Tren salirCochera()
 {
-    Tren tren = NULL;
-
+    Tren tren = (Tren)malloc(sizeof(struct Pasajero));
+    if (tren != NULL)
+    {
+        tren->asiento = 0;
+        memset(tren->destino, 0, sizeof(tren->destino)); // Inicializar el campo destino como una cadena vacía
+        tren->sig = NULL;
+    }
     return tren;
 }
 
@@ -15,12 +20,13 @@ Tren salirCochera()
  *          Hay que mostrar el asiento y destino de cada uno */
 void mostrarPasajeros(Tren t)
 {
-    if(t == NULL) {
-        return;
-    }
-    while(t != NULL) {
-        printf("Asiento: %d - Destino: %c", t->asiento, t->destino);
-        t = t->sig;
+    Tren ptr;
+
+    ptr = t;
+    while (ptr->sig != NULL)
+    {
+        printf("El pasajero con asiento %d, tiene destino %s\n", ptr->asiento, ptr->destino);
+        ptr = ptr->sig;
     }
 }
 
@@ -29,91 +35,87 @@ void mostrarPasajeros(Tren t)
  *       Devuelve el número de pasajeros que se han bajado en la cochera */
 int entrarCochera(Tren *t)
 {
-    int contador = 0;
+    int numPasajeros = 0;
     Tren ptr;
-    while((*t)->sig != NULL) {
-        contador++;
-        ptr = (*t);
-        (*t) = (*t)->sig;
+
+    while (t != NULL)
+    {
+        ptr = *t;
+        *t = (*t)->sig;
         free(ptr);
+        numPasajeros++;
     }
-    return contador;
+
+    return numPasajeros;
 }
 
 /* 2 ptos: un pasajero intenta subir al tren.
  *         Si el asiento está disponible se almacena en el tren el asiento y destino del pasajero y se devuelve 1.
  *         Si el asiento está ocupado no se modifica la lista y se devuelve 0. */
-int subirPasajero(Tren* t, int asiento, char* destino)
+int subirPasajero(Tren *t, int asiento, char *destino)
 {
+    Tren ptr = *t;
+
+    while (ptr != NULL)
+    {
+        if (ptr->asiento == asiento)
+        {
+            return 0; // El asiento está ocupado
+        }
+        ptr = ptr->sig;
+    }
+
+    // El asiento esta disponible, se crea un nuevo pasajero y se añade al tren
     Tren nuevoPasajero = (Tren)malloc(sizeof(struct Pasajero));
-    if (nuevoPasajero == NULL) {
-        return 0;
+    if (nuevoPasajero == NULL)
+    {
+        return 0; // No se pudo asignar memoria
     }
 
     nuevoPasajero->asiento = asiento;
     strcpy(nuevoPasajero->destino, destino);
-    nuevoPasajero->sig = NULL;
+    nuevoPasajero->sig = *t;
 
-    if (*t == NULL) {
-        // Si la lista está vacía, el nuevo pasajero será el primer elemento
-        *t = nuevoPasajero;
-        return 1;
-    }
-
-    // Si el asiento del nuevo pasajero es menor que el primer asiento de la lista,
-    // el nuevo pasajero se convierte en el primer elemento
-    if (asiento < (*t)->asiento) {
-        nuevoPasajero->sig = *t;
-        *t = nuevoPasajero;
-        return 1;
-    }
-
-    Tren actual = *t;
-    while (actual->sig != NULL) {
-        // Si el asiento del nuevo pasajero es menor que el siguiente asiento,
-        // se inserta en medio de los dos nodos
-        if (asiento < actual->sig->asiento) {
-            nuevoPasajero->sig = actual->sig;
-            actual->sig = nuevoPasajero;
-            return 1;
-        }
-        actual = actual->sig;
-    }
-
-    // Si el asiento del nuevo pasajero es mayor que todos los asientos existentes,
-    // se inserta al final de la lista
-    actual->sig = nuevoPasajero;
+    *t = nuevoPasajero; // Actualiza el puntero del tren al nuevo pasajero
     return 1;
 }
-
 
 /* 2 ptos: cuando el tren llega a una parada, se bajan del tren (se extraen de la lista)
  *         todos los pasajeros con ese destino.
  *	       La función devuelve el número de pasajeros que se han bajado */
 int parada(Tren *t, char *parada)
 {
-   int numPasajero = 0;
-   Tren ptr = *t;
-   Tren pasajeroAnterior = NULL;
+    Tren ptr = *t;
+    Tren pasajeroAnterior = NULL;
+    int numPasajero = 0;
 
-    while (ptr != NULL) {
-        if(strcmp(ptr->destino, parada) == 0) {
-            if(pasajeroAnterior == NULL) {
-                //Primero de la lista
+    while (ptr != NULL)
+    {
+        if (strcmp(ptr->destino, parada) == 0)
+        {
+            if (pasajeroAnterior == NULL)
+            {
+                // El pasajero a eliminar es el primer elemento de la lista
                 *t = ptr->sig;
-            }else{
-                //No es el primero de la lista
+            }
+            else
+            {
+                // El pasajero a eliminar no es el primer elemento de la lista
                 pasajeroAnterior->sig = ptr->sig;
             }
+
             Tren pasajeroAEliminar = ptr;
             ptr = ptr->sig;
             free(pasajeroAEliminar);
             numPasajero++;
-        }else{
+        }
+        else
+        {
             pasajeroAnterior = ptr;
             ptr = ptr->sig;
         }
     }
+
     return numPasajero;
 }
 
@@ -123,14 +125,18 @@ int parada(Tren *t, char *parada)
 void guardarBinario(Tren t, char *fichero)
 {
     FILE *archivo = fopen(fichero, "wb");
-    if(archivo == NULL) {
+    if (archivo == NULL)
+    {
+        printf("Error al abrir el fichero.\n");
         return;
     }
     Tren pasajeroActual = t;
-    while(pasajeroActual != NULL) {
+    while (pasajeroActual != NULL) // pasajero1 -> pasajero2 -> pasajero3 -> NULL
+    {
         fwrite(&(pasajeroActual->asiento), sizeof(int), 1, archivo);
         int longitudDestino = strlen(pasajeroActual->destino);
-        fwrite(&longitudDestino, sizeof (int), 1, archivo);
+        fwrite(&longitudDestino, sizeof(int), 1, archivo);
+        fwrite(pasajeroActual->destino, sizeof(char), longitudDestino, archivo);
         pasajeroActual = pasajeroActual->sig;
     }
     fclose(archivo);
@@ -143,42 +149,57 @@ void guardarBinario(Tren t, char *fichero)
 Tren cargarBinario(char *fichero)
 {
     FILE *archivo = fopen(fichero, "rb");
-    if(archivo == NULL) {
-        return NULL;
+    if (archivo == NULL)
+    {
+        printf("Error al abrir el fichero.\n");
+        return;
     }
     Tren tren = NULL;
     Tren pasajeroAnterior = NULL;
 
-    while(!feof(archivo)) {
+    while (!feof(archivo))
+    {
         Tren nuevoPasajero = (Tren)malloc(sizeof(struct Pasajero));
-        if(nuevoPasajero == NULL){
+        if (nuevoPasajero == NULL)
+        {
+            printf("Error al asignar memoria para el pasajero.\n");
             break;
         }
 
-        if(fread(&(nuevoPasajero->asiento), sizeof(int),1,archivo) != 1) {
+        if (fread(&(nuevoPasajero->asiento), sizeof(int), 1, archivo) != 1)
+        {
+            printf("Error al leer el número de asiento desde el archivo.\n");
             free(nuevoPasajero);
             break;
         }
 
         int longitudDestino;
-        if(fread(&longitudDestino, sizeof(int), 1, archivo) != 1) {
+        if (fread(&longitudDestino, sizeof(int), 1, archivo) != 1)
+        {
+            printf("Error al leer la longitud del destino desde el archivo.\n");
             free(nuevoPasajero);
             break;
         }
 
-        nuevoPasajero->destino[longitudDestino] = '\0';
-        if(fread(nuevoPasajero->destino, sizeof (char), longitudDestino, archivo) != longitudDestino) {
+        nuevoPasajero->destino[longitudDestino] = '\0'; // Asegurar terminación nula
+        if (fread(nuevoPasajero->destino, sizeof(char), longitudDestino, archivo) != longitudDestino)
+        {
+            printf("Error al leer el nombre del destino desde el archivo.\n");
             free(nuevoPasajero);
             break;
         }
 
         nuevoPasajero->sig = NULL;
-        if(tren == NULL) {
+        if (tren == NULL)
+        {
             tren = nuevoPasajero;
-        }else{
+        }
+        else
+        {
             pasajeroAnterior->sig = nuevoPasajero;
         }
-        pasajeroAnterior->sig = nuevoPasajero;
+
+        pasajeroAnterior = nuevoPasajero;
     }
     fclose(archivo);
     return tren;

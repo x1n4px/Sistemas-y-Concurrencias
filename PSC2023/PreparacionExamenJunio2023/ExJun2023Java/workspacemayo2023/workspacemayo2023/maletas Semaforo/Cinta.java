@@ -4,72 +4,75 @@ import java.util.concurrent.Semaphore;
 
 public class Cinta {
 
-	private int maletasPrimera, maletasTurista;
-	private Semaphore mutex;
-	private Semaphore primeraDisponible;
-	private Semaphore turistaDisponible;
-	private Semaphore primeraEsperando;
-	private Semaphore turistaEsperando;
+	private int maletasP, maletasT;
+ 	private Semaphore mutexMaletas, mutexCinta, hayPrimera, hayTurista;
 
 	public Cinta() {
-		maletasTurista = 0;
-		maletasPrimera = 0;
-		mutex = new Semaphore(1);
-		primeraDisponible = new Semaphore(0);
-		turistaDisponible = new Semaphore(0);
-		primeraEsperando = new Semaphore(0);
-		turistaEsperando = new Semaphore(0);
+		maletasT = 0;
+		maletasP = 0;
+		mutexMaletas = new Semaphore(1, true);
+		mutexCinta = new Semaphore(1, true);
+		hayPrimera = new Semaphore(0, true);
+		hayTurista = new Semaphore(0, true);
 
 	}
 	
 	public void poner(boolean primeraClase) throws InterruptedException {
-		mutex.acquire();
+		mutexMaletas.acquire();
 		if(primeraClase) {
-			maletasPrimera++;
-			if(primeraEsperando.availablePermits() > 0) {
-				primeraDisponible.release();
-			}
-			System.out.println("Se ha puesto una maleta de primera en la cinta. " + maletasPrimera);
-
-		}else{
-			maletasTurista++;
-			if (turistaEsperando.availablePermits() > 0 && primeraEsperando.availablePermits() == 0) {
-				turistaDisponible.release(); // Señalizar a un pasajero de clase turista
-			}
-			System.out.println("Se ha puesto una maleta de turista en la cinta. " + maletasTurista);
+			maletasP++;
+			System.out.println("Generador: maleta de primera. maletasP: " +maletasP +" maletasT: " +maletasT);
+			if(maletasP ==1)
+				hayPrimera.release();
+		}else {
+			maletasT++;
+			System.out.println("Generador: maleta de turista. maletasP: " +maletasP +" maletasT: " +maletasT);
+			if(maletasT ==1)
+				hayTurista.release();
 		}
-
-		mutex.release();
+		mutexMaletas.release();
 	}
 	
 
 	public void qRetirarPrimera(int pasajeroId) throws InterruptedException {
-		primeraEsperando.release();
-		primeraDisponible.acquire();
-		mutex.acquire();
-		maletasPrimera--;
-		System.out.println("El pasajero " + pasajeroId + " retira una maleta de primera clase. Maletas Primera: " + maletasPrimera);
-		mutex.release();
-	}
+		hayPrimera.acquire(); //Solo entra uno de primera
+		mutexCinta.acquire(); //Solo entra uno de los dos
+		System.out.println("El pasajero " + pasajeroId + " puede retira una maleta de primera clase. Maletas Primera: " + maletasP);
+ 	}
 
 	public void qRetirarTurista(int pasajeroId) throws InterruptedException {
-		turistaEsperando.release();
-		turistaDisponible.acquire();
-		mutex.acquire();
-		maletasTurista--;
-		System.out.println("El pasajero " + pasajeroId + " retira una maleta de clase turista. Maletas Turista: " + maletasTurista);
-		mutex.release();
+		hayTurista.acquire();
+		mutexCinta.acquire();
+		System.out.println("El pasajero " + pasajeroId + " puede retira una maleta de Turista clase. Maletas Primera: " + maletasT);
+
+
 	}
 	
 	public void fRetirarPrimera(int pasajeroId) throws InterruptedException {
-
-		mutex.acquire();
-		System.out.println("El pasajero " + pasajeroId + " ha recogido su maleta de primera clase. Maletas Primera: " + maletasPrimera);
-		mutex.release(); 	}
+		System.out.println("***Pas. Primera " + pasajeroId + " puede coger la maleta.");
+		mutexMaletas.acquire(); // mutex con la hebra generador
+		maletasP--;
+		if (maletasP>0){
+			mutexMaletas.release();
+			mutexCinta.release();
+			hayPrimera.release(); //Se quedan maletas, dejamos entrar a otro.
+		}else{
+			mutexMaletas.release();
+			mutexCinta.release();
+		}
+	}
 	public void fRetirarTurista(int pasajeroId) throws InterruptedException {
-
-		mutex.acquire();
-		System.out.println("El pasajero " + pasajeroId + " ha recogido su maleta de clase turista. Maletas Turista: " + maletasTurista);
-		mutex.release(); 	}
+		System.out.println("***Pas. Turista " + pasajeroId + " puede coger la maleta.");
+		mutexMaletas.acquire(); // mutex con la hebra generador
+		maletasT--;
+		if (maletasP>0){
+			mutexMaletas.release();
+			mutexCinta.release();
+			hayPrimera.release(); //Se quedan maletas, dejamos entrar a otro.
+		}else{
+			mutexMaletas.release();
+			mutexCinta.release();
+		}
+	}
 
 }

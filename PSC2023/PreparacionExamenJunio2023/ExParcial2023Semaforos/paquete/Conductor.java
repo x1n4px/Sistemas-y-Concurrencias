@@ -16,7 +16,7 @@ public class Conductor extends Thread{
 			while (!gestor.estaCerrado()) {
 					gestor.cargarPaquetes(id);
 					gestor.repartir(id);
-					Thread.sleep(r.nextInt(1000));
+					Thread.sleep(r.nextInt(200));
 			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();

@@ -5,107 +5,107 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class Cinta {
+	private int maletasP = 0, maletasT = 0;
+	private Lock lockCinta;
+	private Lock lockMaletas;
+	private Condition hayPrimera;
+	private Condition hayTurista;
+	private boolean PrimeraQuiereRetirar = false;
 
-	private int maletasPrimera, maletasTurista, primeraEsperando;
-	private boolean pasajeroRetirando;
-	private Lock lock;
-	private Condition primeraDisponible;
-	private Condition turistaDisponible;
 	public Cinta() {
-		maletasPrimera = 0;
-		maletasTurista = 0;
-		primeraEsperando = 0;
-		pasajeroRetirando = false;
-		lock = new ReentrantLock();
-		primeraDisponible = lock.newCondition();
-		turistaDisponible = lock.newCondition();
+		lockMaletas = new ReentrantLock();
+		lockCinta = new ReentrantLock();
+		hayPrimera = lockMaletas.newCondition();
+		hayTurista = lockMaletas.newCondition();
 	}
 	
 	public void poner(boolean primeraClase) throws InterruptedException {
-		lock.lock();
+		lockMaletas.lock();
 		try{
-			//Si (entra una maleta de Primera clase)
-			if(primeraClase) {
-				//Aumentamos el numero de maletas de Primera clase
-				maletasPrimera++;
-				//Si hay alguien de Primera esperando por su maleta
-				if(primeraEsperando >  0) {
-					//Le avisamos
-					primeraDisponible.signal();
+			if(primeraClase){
+				maletasP++;
+				System.out.println("Generador: maleta de primera. maletasP: " +maletasP +" maletasT: " +maletasT);
+				if(maletasP == 1) {
+					hayPrimera.signalAll();
 				}
 			}else{
-				//Si (entra una maleta de clase Turista)
-				maletasTurista++;
-			}
-			System.out.println("Se ha puesto una maleta en la cinta.");
+				maletasT++;
+				System.out.println("Generador: maleta de turista. maletasP: " +maletasP +" maletasT: " +maletasT);
+				if(maletasT ==1){
+					hayTurista.signalAll();
+				}
+ 			}
 		}finally {
-			lock.unlock();
+			lockMaletas.unlock();
 		}
 	}
 	
 
 	public void qRetirarPrimera(int pasajeroId) throws InterruptedException {
-		lock.lock();
+		lockMaletas.lock();
 		try{
-			//Hay alguien de Primera clase esperando
-			primeraEsperando++;
-			//Mientras (no haya maletas de Primera clase ó haya alguien recogiendo su maleta)
-			while (maletasPrimera == 0 || pasajeroRetirando) {
-				//los de Primera clase esperan
-				primeraDisponible.await();
+			PrimeraQuiereRetirar = true;
+			if(maletasP == 0) {
+				hayPrimera.await();
 			}
-			//el pasajero retira su maleta
-			pasajeroRetirando = true;
-			System.out.println("El pasajero " + pasajeroId + " retira una maleta de primera clase.");
+			System.out.println("El pasajero " + pasajeroId + " puede retira una maleta de primera clase. Maletas Primera: " + maletasP);
 
 		}finally {
-			//retiramos un pasajero de Primera clase que estaba esperando por su maleta
-			primeraEsperando--;
-			lock.unlock();
+			lockMaletas.unlock();
 		}
 	}
 	
 	public void qRetirarTurista(int pasajeroId) throws InterruptedException {
-		lock.lock();
+		lockMaletas.lock();
 		try{
-			//Mientras(no haya maleta Turista ó haya alguien de Primera clase esperando ó haya otro pasajero recogiendo su maleta)
- 			while (maletasTurista == 0 || primeraEsperando > 0 || pasajeroRetirando) {
-				 //pasajero de clase Turista espera
-				turistaDisponible.await();
+			if(maletasT == 0 || PrimeraQuiereRetirar) {
+				hayTurista.await();
 			}
-			 //el pasajero ya puede retirar su maleta
-			 pasajeroRetirando = true;
-			System.out.println("El pasajero " + pasajeroId + " retira una maleta de clase turista.");
+			System.out.println("El pasajero " + pasajeroId + " puede retira una maleta de Turista clase. Maletas Primera: " + maletasT);
+
 		}finally {
-			lock.unlock();
+			lockMaletas.unlock();
 		}
 	}
 	
 	public void fRetirarPrimera(int pasajeroId) throws InterruptedException {
-		lock.lock();
+		System.out.println("***Pas. Primera " + pasajeroId + " puede coger la maleta.");
+		lockMaletas.lock();
 		try{
-			//El pasajero de Primera clase va a retirar su maleta
-			maletasPrimera--;
-			pasajeroRetirando = false;
-			//Avisa a todos los pasajeros de que pueden recoger su maleta, ya que nadie espera
-			turistaDisponible.signal();
-			primeraDisponible.signal();
-			System.out.println("El pasajero " + pasajeroId + " ha recogido su maleta de primera clase.");
+			while(maletasP == 0) {
+				hayPrimera.await();
+			}
+			maletasP--;
+			PrimeraQuiereRetirar = false;
+			if(maletasP == 0 && maletasT > 0) {
+ 				hayTurista.signalAll();
+			}else{
+				hayPrimera.signalAll();
+			}
 		}finally {
-			lock.unlock();
+			lockMaletas.unlock();
 		}
 	}
 	public void fRetirarTurista(int pasajeroId) throws InterruptedException {
-		lock.lock();
-		try {
-			//El pasajero de clase Turista recoge su maleta
-			maletasTurista--;
-			pasajeroRetirando = false;
-			//Se avisan a los de primera clase de que pueden recoger su maleta
-			primeraDisponible.signal();
-			System.out.println("El pasajero " + pasajeroId + " ha recogido su maleta de clase turista.");
-		} finally {
-			lock.unlock();
+		System.out.println("***Pas. Turista " + pasajeroId + " puede coger la maleta.");
+		lockMaletas.lock();
+		try{
+			while(maletasT == 0) {
+				hayTurista.await();
+			}
+			maletasT--;
+			if(maletasP == 0 && maletasP > 0) {
+				hayPrimera.signalAll();
+ 			}else{
+				if(maletasP > 0 && PrimeraQuiereRetirar){
+					hayPrimera.signalAll();
+				}else{
+					hayTurista.signalAll();
+				}
+
+			}
+		}finally {
+			lockMaletas.unlock();
 		}
 	}
 

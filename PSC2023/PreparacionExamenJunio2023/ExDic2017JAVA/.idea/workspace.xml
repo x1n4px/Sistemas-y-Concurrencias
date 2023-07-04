@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4a57c673-cd2c-465a-9101-97e15103ea18" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../ExJun2023C/Esqueletos/Esqueletos/Imagenes.c" beforeDir="false" afterPath="$PROJECT_DIR$/../ExJun2023C/Esqueletos/Esqueletos/Imagenes.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExJun2023C/Esqueletos/Esqueletos/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../ExJun2023C/Esqueletos/Esqueletos/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExJun2023C/Esqueletos/Esqueletos/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../ExJun2023C/Esqueletos/Esqueletos/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExJun2023C/Esqueletos/Esqueletos/cmake-build-debug/CMakeFiles/Esqueletos.dir/Imagenes.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../ExJun2023C/Esqueletos/Esqueletos/cmake-build-debug/CMakeFiles/Esqueletos.dir/Imagenes.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExJun2023C/Esqueletos/Esqueletos/cmake-build-debug/Esqueletos" beforeDir="false" afterPath="$PROJECT_DIR$/../ExJun2023C/Esqueletos/Esqueletos/cmake-build-debug/Esqueletos" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExJun2023C/Esqueletos/Esqueletos/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../ExJun2023C/Esqueletos/Esqueletos/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExParcial2023Locks/esqueleto(Locks)/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ExParcial2023Locks/esqueleto(Locks)/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExParcial2023Semaforos/paquete/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ExParcial2023Semaforos/paquete/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExParcial2023Semaforos/paquete/Conductor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ExParcial2023Semaforos/paquete/Conductor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExParcial2023Semaforos/paquete/out/production/paquete/paquete/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ExParcial2023Semaforos/paquete/out/production/paquete/paquete/Cliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExParcial2023Semaforos/paquete/out/production/paquete/paquete/Conductor.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ExParcial2023Semaforos/paquete/out/production/paquete/paquete/Conductor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExSept2014C/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../ExSept2014C/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExSept2021C/GestionTren.c" beforeDir="false" afterPath="$PROJECT_DIR$/../ExSept2021C/GestionTren.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExSept2021C/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../ExSept2021C/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExSept2021C/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../ExSept2021C/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExSept2021C/cmake-build-debug/CMakeFiles/ExSept2021C.dir/GestionTren.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../ExSept2021C/cmake-build-debug/CMakeFiles/ExSept2021C.dir/GestionTren.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExSept2021C/cmake-build-debug/ExSept2021C" beforeDir="false" afterPath="$PROJECT_DIR$/../ExSept2021C/cmake-build-debug/ExSept2021C" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExSept2021C/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../ExSept2021C/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExSept2021C/cmake-build-debug/registro.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../ExSept2021C/cmake-build-debug/registro.bin" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2RqC5F49VQk1LkdbYoJUdRkPiUl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/in4p/git/Sistemas-y-Concurrencias/PSC2023/PreparacionExamenJunio2023/Junio2017EsqJAVA/Semaphore"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4a57c673-cd2c-465a-9101-97e15103ea18" name="Changes" comment="" />
+      <created>1687968038487</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1687968038487</updated>
+    </task>
+    <servers />
+  </component>
+</project>

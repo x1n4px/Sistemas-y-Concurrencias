@@ -14,10 +14,10 @@ public class Cliente extends Thread{
 	}	
 	public void run() {
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(200);
 			int peso = r.nextInt(10)+5;
 			while (gestor.entregaPaquete(id, peso).compareTo(EstadoPaquete.REINTENTAR)==0)
-			Thread.sleep(4000);
+			Thread.sleep(200);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
