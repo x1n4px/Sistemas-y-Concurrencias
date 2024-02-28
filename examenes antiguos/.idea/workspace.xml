@@ -1,41 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="3f56d160-438e-4c5c-ac2f-d60770196625" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExDic2017C/Principal.c" beforeDir="false" afterPath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExDic2017C/Principal.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExDic2017C/colaPrioridad.h" beforeDir="false" afterPath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExDic2017C/colaPrioridad.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExJun2016C/ListaJugadores.c" beforeDir="false" afterPath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExJun2016C/ListaJugadores.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExJun2016C/Principal.c" beforeDir="false" afterPath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExJun2016C/Principal.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExJun2016C/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExJun2016C/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExJun2016C/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExJun2016C/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExJun2016C/cmake-build-debug/CMakeFiles/ExJun2016C.dir/ListaJugadores.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExJun2016C/cmake-build-debug/CMakeFiles/ExJun2016C.dir/ListaJugadores.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExJun2016C/cmake-build-debug/CMakeFiles/ExJun2016C.dir/Principal.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExJun2016C/cmake-build-debug/CMakeFiles/ExJun2016C.dir/Principal.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExJun2016C/cmake-build-debug/ExJun2016C" beforeDir="false" afterPath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExJun2016C/cmake-build-debug/ExJun2016C" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExJun2016C/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExJun2016C/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExSept2017JAVA/BabuinoNS.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExSept2017JAVA/BabuinoSN.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExSept2017JAVA/Cuerda.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExSept2017JAVA/Principal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExSept2021C/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/ExSept2021C/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/Junio 2022 -  Enunciado y esqueletos-JAVA/esqueleto-español/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/Junio 2022 -  Enunciado y esqueletos-JAVA/esqueleto-español/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/Junio 2022 -  Enunciado y esqueletos-JAVA/esqueleto-español/SupermercadoMonitores.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/Junio 2022 -  Enunciado y esqueletos-JAVA/esqueleto-español/SupermercadoMonitores.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/Junio2017EsqJAVA/Guarderia.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PSC2023/PreparacionExamenJunio2023/Junio2017EsqJAVA/Guarderia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSC2023/practicaExtra/practicaExtra/.classpath" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSC2023/practicaExtra/practicaExtra/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSC2023/practicaExtra/practicaExtra/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSC2023/practicaExtra/practicaExtra/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSC2023/practicaExtra/practicaExtra/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSC2023/practicaExtra/practicaExtra/src/practicaExtra/GUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSC2023/practicaExtra/practicaExtra/src/practicaExtra/pantall.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
   <component name="ProjectId" id="2RVff1NnPMRbr1ufgqqxIoxXyN2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -43,8 +31,17 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.RadMigrateCodeStyle": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/in4p/git/Sistemas-y-Concurrencias/PSC2023/PreparacionExamenJunio2023/ExSept2019C"
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/in4p/uma/Sistemas-y-Concurrencias/examenes antiguos",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -55,7 +52,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1687340269085</updated>
+      <workItem from="1708219684492" duration="113000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
