@@ -1,0 +1,1289 @@
+{
+    "id": 11,
+    "name": "Alejandro",
+    "surname": "Díaz Martí",
+    "identificationDocumentNumber": "77455991E",
+    "phone": "654485559",
+    "email": "aledmart@gmail.com",
+    "academicDegree": "Ingeniero químico",
+    "datesStart": "2024-01-30",
+    "numberCCC": "AN22924194129",
+    "position": "Profesor de Química",
+    "swiff": "00 310 00012",
+    "iban": "ES221 2141241241",
+    "treatment": "Sr.",
+    "acceptDataProtection": true,
+    "dateAcceptDataProtection": "2024-01-30",
+    "acceptPublicity": true,
+    "dateAcceptPublicity": "2024-01-30",
+    "isRestricted": false,
+    "user": {
+        "id": 116,
+        "dni": "77455991E",
+        "username": "aled",
+        "password": "$2a$10$ul66dedAar0dV.Ht/m4Ql.t4ohkB/El081bi6nM6n/oJS5XRvFMiC",
+        "appUser": {
+            "role": "00100000"
+        }
+    },
+    "identificationDocument": {
+        "id": 1,
+        "name": "DNI"
+    },
+    "gender": {
+        "id": 1,
+        "name": "Hombre"
+    },
+    "participatorRole": [
+        {
+            "id": 139,
+            "hours": 22.0,
+            "activity": {
+                "id": 107,
+                "name": "Análisis de datos con Python",
+                "esBonus": true,
+                "notificationsMail": "emilja@gmail.com",
+                "codeTitleUMA": "1",
+                "codeFGUMA": "1",
+                "virtualChannelCode": "1",
+                "delegationCode": "1",
+                "projectCode": "1",
+                "dateStart": "2024-03-18",
+                "dateEnd": "2024-05-29",
+                "minimumAssistance": 60.0,
+                "registerUMADiploma": "0",
+                "lengthHoursOnline": 0.0,
+                "lengthHoursOffline": 25.0,
+                "lengthHoursStreaming": 0.0,
+                "dateStartInscription": "2024-01-01",
+                "dateEndInscription": "2024-02-29",
+                "expirationDays": 15,
+                "numberCredits": 0.0,
+                "maxRegistrations": 50,
+                "uuid": "00",
+                "event": {
+                    "id": 25,
+                    "name": "Cursos Online 2024",
+                    "canal": "CEO021",
+                    "justOneRegistration": false,
+                    "isSummer": false,
+                    "isAccreditation": false,
+                    "edition": {
+                        "id": 24,
+                        "course": "2023-24",
+                        "department": {
+                            "id": 10007,
+                            "name": "Fundacion fguma",
+                            "notificationEmail": "fundacion@fguma.es",
+                            "isCI": false
+                        }
+                    },
+                    "mailTemplates": [
+                        {
+                            "id": 11,
+                            "template": "<p>Estimado Alumno &lt;ACTIVITY-NAME&gt;,</p><p><br></p><br>",
+                            "event": {
+                                "id": 25
+                            },
+                            "mailType": {
+                                "id": 1,
+                                "name": "Creación"
+                            }
+                        },
+                        {
+                            "id": 13,
+                            "template": "<p>Estimado Alumno &lt;ACTIVITY-NAME&gt;,</p><p><br><br></p><p></p>",
+                            "event": {
+                                "id": 25
+                            },
+                            "mailType": {
+                                "id": 4,
+                                "name": "Caducidad"
+                            }
+                        },
+                        {
+                            "id": 14,
+                            "template": "<p>Estimado Alumno &lt;ACTIVITY-NAME&gt;,</p><p><br><br></p><p></p>",
+                            "event": {
+                                "id": 25
+                            },
+                            "mailType": {
+                                "id": 5,
+                                "name": "Confirmación y formalización (Bono)"
+                            }
+                        },
+                        {
+                            "id": 15,
+                            "template": "<p>Estimado Alumno &lt;ACTIVITY-NAME&gt;,</p><p><br><br></p><p></p>",
+                            "event": {
+                                "id": 25
+                            },
+                            "mailType": {
+                                "id": 3,
+                                "name": "Confirmación y formalización"
+                            }
+                        },
+                        {
+                            "id": 16,
+                            "template": "<p>Estimado Alumno &lt;ACTIVITY-NAME&gt;,</p><p><br><br></p><p></p>",
+                            "event": {
+                                "id": 25
+                            },
+                            "mailType": {
+                                "id": 2,
+                                "name": "Solicitud de pago"
+                            }
+                        }
+                    ]
+                },
+                "typeRegister": {
+                    "id": 2,
+                    "name": "Parcial"
+                },
+                "headquarter": {
+                    "id": 4,
+                    "name": "Málaga",
+                    "city": {
+                        "id": 1,
+                        "name": "Málaga"
+                    }
+                },
+                "ratingType": {
+                    "id": 6,
+                    "name": "Calificación de idiomas estándar",
+                    "ratings": [
+                        {
+                            "id": 31,
+                            "name": "Speaking",
+                            "percentage": 25.0
+                        },
+                        {
+                            "id": 32,
+                            "name": "Listening",
+                            "percentage": 25.0
+                        },
+                        {
+                            "id": 33,
+                            "name": "Writing",
+                            "percentage": 25.0
+                        },
+                        {
+                            "id": 34,
+                            "name": "Reading",
+                            "percentage": 25.0
+                        }
+                    ]
+                },
+                "paymentAccount": {
+                    "id": 12,
+                    "nominalName": "Cuenta de pago de fundación",
+                    "accountNumber": "219487129",
+                    "iban": "ES21"
+                },
+                "diplomaType": {
+                    "id": 1,
+                    "name": "Físico"
+                },
+                "billingType": {
+                    "id": 1,
+                    "name": "Tarjeta"
+                },
+                "schedules": [
+                    {
+                        "id": 92,
+                        "maxCapacity": 40.0,
+                        "classroom": {
+                            "id": 15,
+                            "classroom": "3.0.8"
+                        },
+                        "registrations": [
+                            {
+                                "id": 195,
+                                "solicitudeDate": "2024-02-22",
+                                "student": {
+                                    "id": 43,
+                                    "name": "Yadira",
+                                    "surname": "Albedo Soria",
+                                    "identificationDocumentNumber": "77428560A",
+                                    "user": {
+                                        "id": 115,
+                                        "dni": "77428560A",
+                                        "username": "yadh",
+                                        "appUser": {
+                                            "id": 75,
+                                            "name": "Yadira",
+                                            "surname": "Albedo Soria",
+                                            "repImage": "388eac5f-32b2-4525-8231-4bcb46eb39f8.webp",
+                                            "user": {
+                                                "id": 115,
+                                                "dni": "77428560A",
+                                                "username": "yadh",
+                                                "password": "$2a$10$WA7O3Yo8sN7OWIIETv7EIe1Z.IUfFZV5l3NwzNKKtXm/pG1Xm3.cC",
+                                                "isDown": false,
+                                                "student": {
+                                                    "id": 43
+                                                },
+                                                "appUser": {
+                                                    "id": 75,
+                                                    "name": "Yadira",
+                                                    "surname": "Albedo Soria",
+                                                    "role": "00100000",
+                                                    "repImage": "388eac5f-32b2-4525-8231-4bcb46eb39f8.webp",
+                                                    "validatorActivities": []
+                                                }
+                                            },
+                                            "validatorActivities": []
+                                        }
+                                    }
+                                },
+                                "rate": {
+                                    "id": 66,
+                                    "maxParticipants": 40,
+                                    "collective": {
+                                        "id": 18,
+                                        "name": "Ordinario"
+                                    },
+                                    "requiredDocuments": [],
+                                    "rate_modalities": [
+                                        {
+                                            "id": 149,
+                                            "price": 120.0,
+                                            "modality": {
+                                                "id": 1,
+                                                "name": "Presencial"
+                                            }
+                                        },
+                                        {
+                                            "id": 150,
+                                            "price": 100.0,
+                                            "modality": {
+                                                "id": 3,
+                                                "name": "Virtual"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "state": {
+                                    "id": 1,
+                                    "name": "Creada"
+                                },
+                                "rate_modality": {
+                                    "id": 149,
+                                    "price": 120.0,
+                                    "modality": {
+                                        "id": 1,
+                                        "name": "Presencial"
+                                    }
+                                },
+                                "ratings": [],
+                                "noAssistances": []
+                            },
+                            {
+                                "id": 196,
+                                "solicitudeDate": "2024-02-22",
+                                "student": {
+                                    "id": 35,
+                                    "name": "Juan Antonio",
+                                    "surname": "Gutierrez Mata",
+                                    "identificationDocumentNumber": "78243456H"
+                                },
+                                "rate": {
+                                    "id": 66,
+                                    "maxParticipants": 40,
+                                    "collective": {
+                                        "id": 18,
+                                        "name": "Ordinario"
+                                    },
+                                    "requiredDocuments": [],
+                                    "rate_modalities": [
+                                        {
+                                            "id": 149,
+                                            "price": 120.0,
+                                            "modality": {
+                                                "id": 1,
+                                                "name": "Presencial"
+                                            }
+                                        },
+                                        {
+                                            "id": 150,
+                                            "price": 100.0,
+                                            "modality": {
+                                                "id": 3,
+                                                "name": "Virtual"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "state": {
+                                    "id": 1,
+                                    "name": "Creada"
+                                },
+                                "rate_modality": {
+                                    "id": 149,
+                                    "price": 120.0,
+                                    "modality": {
+                                        "id": 1,
+                                        "name": "Presencial"
+                                    }
+                                },
+                                "ratings": [],
+                                "noAssistances": []
+                            },
+                            {
+                                "id": 197,
+                                "solicitudeDate": "2024-02-22",
+                                "student": {
+                                    "id": 43,
+                                    "name": "Yadira",
+                                    "surname": "Albedo Soria",
+                                    "identificationDocumentNumber": "77428560A",
+                                    "user": {
+                                        "id": 115,
+                                        "dni": "77428560A",
+                                        "username": "yadh",
+                                        "appUser": {
+                                            "id": 75,
+                                            "name": "Yadira",
+                                            "surname": "Albedo Soria",
+                                            "repImage": "388eac5f-32b2-4525-8231-4bcb46eb39f8.webp",
+                                            "user": {
+                                                "id": 115,
+                                                "dni": "77428560A",
+                                                "username": "yadh",
+                                                "password": "$2a$10$WA7O3Yo8sN7OWIIETv7EIe1Z.IUfFZV5l3NwzNKKtXm/pG1Xm3.cC",
+                                                "isDown": false,
+                                                "student": {
+                                                    "id": 43
+                                                },
+                                                "appUser": {
+                                                    "id": 75,
+                                                    "name": "Yadira",
+                                                    "surname": "Albedo Soria",
+                                                    "role": "00100000",
+                                                    "repImage": "388eac5f-32b2-4525-8231-4bcb46eb39f8.webp",
+                                                    "validatorActivities": []
+                                                }
+                                            },
+                                            "validatorActivities": []
+                                        }
+                                    }
+                                },
+                                "rate": {
+                                    "id": 66,
+                                    "maxParticipants": 40,
+                                    "collective": {
+                                        "id": 18,
+                                        "name": "Ordinario"
+                                    },
+                                    "requiredDocuments": [],
+                                    "rate_modalities": [
+                                        {
+                                            "id": 149,
+                                            "price": 120.0,
+                                            "modality": {
+                                                "id": 1,
+                                                "name": "Presencial"
+                                            }
+                                        },
+                                        {
+                                            "id": 150,
+                                            "price": 100.0,
+                                            "modality": {
+                                                "id": 3,
+                                                "name": "Virtual"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "state": {
+                                    "id": 4,
+                                    "name": "Formalizada"
+                                },
+                                "rate_modality": {
+                                    "id": 149,
+                                    "price": 120.0,
+                                    "modality": {
+                                        "id": 1,
+                                        "name": "Presencial"
+                                    }
+                                },
+                                "ratings": [],
+                                "noAssistances": []
+                            },
+                            {
+                                "id": 198,
+                                "solicitudeDate": "2024-02-22",
+                                "student": {
+                                    "id": 43,
+                                    "name": "Yadira",
+                                    "surname": "Albedo Soria",
+                                    "identificationDocumentNumber": "77428560A",
+                                    "user": {
+                                        "id": 115,
+                                        "dni": "77428560A",
+                                        "username": "yadh",
+                                        "appUser": {
+                                            "id": 75,
+                                            "name": "Yadira",
+                                            "surname": "Albedo Soria",
+                                            "repImage": "388eac5f-32b2-4525-8231-4bcb46eb39f8.webp",
+                                            "user": {
+                                                "id": 115,
+                                                "dni": "77428560A",
+                                                "username": "yadh",
+                                                "password": "$2a$10$WA7O3Yo8sN7OWIIETv7EIe1Z.IUfFZV5l3NwzNKKtXm/pG1Xm3.cC",
+                                                "isDown": false,
+                                                "student": {
+                                                    "id": 43
+                                                },
+                                                "appUser": {
+                                                    "id": 75,
+                                                    "name": "Yadira",
+                                                    "surname": "Albedo Soria",
+                                                    "role": "00100000",
+                                                    "repImage": "388eac5f-32b2-4525-8231-4bcb46eb39f8.webp",
+                                                    "validatorActivities": []
+                                                }
+                                            },
+                                            "validatorActivities": []
+                                        }
+                                    }
+                                },
+                                "rate": {
+                                    "id": 66,
+                                    "maxParticipants": 40,
+                                    "collective": {
+                                        "id": 18,
+                                        "name": "Ordinario"
+                                    },
+                                    "requiredDocuments": [],
+                                    "rate_modalities": [
+                                        {
+                                            "id": 149,
+                                            "price": 120.0,
+                                            "modality": {
+                                                "id": 1,
+                                                "name": "Presencial"
+                                            }
+                                        },
+                                        {
+                                            "id": 150,
+                                            "price": 100.0,
+                                            "modality": {
+                                                "id": 3,
+                                                "name": "Virtual"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "state": {
+                                    "id": 3,
+                                    "name": "Pendiente de pago"
+                                },
+                                "rate_modality": {
+                                    "id": 149,
+                                    "price": 120.0,
+                                    "modality": {
+                                        "id": 1,
+                                        "name": "Presencial"
+                                    }
+                                },
+                                "ratings": [],
+                                "noAssistances": []
+                            },
+                            {
+                                "id": 199,
+                                "solicitudeDate": "2024-02-22",
+                                "student": {
+                                    "id": 43,
+                                    "name": "Yadira",
+                                    "surname": "Albedo Soria",
+                                    "identificationDocumentNumber": "77428560A",
+                                    "user": {
+                                        "id": 115,
+                                        "dni": "77428560A",
+                                        "username": "yadh",
+                                        "appUser": {
+                                            "id": 75,
+                                            "name": "Yadira",
+                                            "surname": "Albedo Soria",
+                                            "repImage": "388eac5f-32b2-4525-8231-4bcb46eb39f8.webp",
+                                            "user": {
+                                                "id": 115,
+                                                "dni": "77428560A",
+                                                "username": "yadh",
+                                                "password": "$2a$10$WA7O3Yo8sN7OWIIETv7EIe1Z.IUfFZV5l3NwzNKKtXm/pG1Xm3.cC",
+                                                "isDown": false,
+                                                "student": {
+                                                    "id": 43
+                                                },
+                                                "appUser": {
+                                                    "id": 75,
+                                                    "name": "Yadira",
+                                                    "surname": "Albedo Soria",
+                                                    "role": "00100000",
+                                                    "repImage": "388eac5f-32b2-4525-8231-4bcb46eb39f8.webp",
+                                                    "validatorActivities": []
+                                                }
+                                            },
+                                            "validatorActivities": []
+                                        }
+                                    }
+                                },
+                                "rate": {
+                                    "id": 66,
+                                    "maxParticipants": 40,
+                                    "collective": {
+                                        "id": 18,
+                                        "name": "Ordinario"
+                                    },
+                                    "requiredDocuments": [],
+                                    "rate_modalities": [
+                                        {
+                                            "id": 149,
+                                            "price": 120.0,
+                                            "modality": {
+                                                "id": 1,
+                                                "name": "Presencial"
+                                            }
+                                        },
+                                        {
+                                            "id": 150,
+                                            "price": 100.0,
+                                            "modality": {
+                                                "id": 3,
+                                                "name": "Virtual"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "state": {
+                                    "id": 3,
+                                    "name": "Pendiente de pago"
+                                },
+                                "rate_modality": {
+                                    "id": 150,
+                                    "price": 100.0,
+                                    "modality": {
+                                        "id": 3,
+                                        "name": "Virtual"
+                                    }
+                                },
+                                "ratings": [],
+                                "noAssistances": []
+                            },
+                            {
+                                "id": 201,
+                                "solicitudeDate": "2024-02-23",
+                                "student": {
+                                    "id": 43,
+                                    "name": "Yadira",
+                                    "surname": "Albedo Soria",
+                                    "identificationDocumentNumber": "77428560A",
+                                    "user": {
+                                        "id": 115,
+                                        "dni": "77428560A",
+                                        "username": "yadh",
+                                        "appUser": {
+                                            "id": 75,
+                                            "name": "Yadira",
+                                            "surname": "Albedo Soria",
+                                            "repImage": "388eac5f-32b2-4525-8231-4bcb46eb39f8.webp",
+                                            "user": {
+                                                "id": 115,
+                                                "dni": "77428560A",
+                                                "username": "yadh",
+                                                "password": "$2a$10$WA7O3Yo8sN7OWIIETv7EIe1Z.IUfFZV5l3NwzNKKtXm/pG1Xm3.cC",
+                                                "isDown": false,
+                                                "student": {
+                                                    "id": 43
+                                                },
+                                                "appUser": {
+                                                    "id": 75,
+                                                    "name": "Yadira",
+                                                    "surname": "Albedo Soria",
+                                                    "role": "00100000",
+                                                    "repImage": "388eac5f-32b2-4525-8231-4bcb46eb39f8.webp",
+                                                    "validatorActivities": []
+                                                }
+                                            },
+                                            "validatorActivities": []
+                                        }
+                                    }
+                                },
+                                "rate": {
+                                    "id": 66,
+                                    "maxParticipants": 40,
+                                    "collective": {
+                                        "id": 18,
+                                        "name": "Ordinario"
+                                    },
+                                    "requiredDocuments": [],
+                                    "rate_modalities": [
+                                        {
+                                            "id": 149,
+                                            "price": 120.0,
+                                            "modality": {
+                                                "id": 1,
+                                                "name": "Presencial"
+                                            }
+                                        },
+                                        {
+                                            "id": 150,
+                                            "price": 100.0,
+                                            "modality": {
+                                                "id": 3,
+                                                "name": "Virtual"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "state": {
+                                    "id": 3,
+                                    "name": "Pendiente de pago"
+                                },
+                                "rate_modality": {
+                                    "id": 149,
+                                    "price": 120.0,
+                                    "modality": {
+                                        "id": 1,
+                                        "name": "Presencial"
+                                    }
+                                },
+                                "ratings": [],
+                                "noAssistances": []
+                            },
+                            {
+                                "id": 202,
+                                "solicitudeDate": "2024-02-23",
+                                "student": {
+                                    "id": 43,
+                                    "name": "Yadira",
+                                    "surname": "Albedo Soria",
+                                    "identificationDocumentNumber": "77428560A",
+                                    "user": {
+                                        "id": 115,
+                                        "dni": "77428560A",
+                                        "username": "yadh",
+                                        "appUser": {
+                                            "id": 75,
+                                            "name": "Yadira",
+                                            "surname": "Albedo Soria",
+                                            "repImage": "388eac5f-32b2-4525-8231-4bcb46eb39f8.webp",
+                                            "user": {
+                                                "id": 115,
+                                                "dni": "77428560A",
+                                                "username": "yadh",
+                                                "password": "$2a$10$WA7O3Yo8sN7OWIIETv7EIe1Z.IUfFZV5l3NwzNKKtXm/pG1Xm3.cC",
+                                                "isDown": false,
+                                                "student": {
+                                                    "id": 43
+                                                },
+                                                "appUser": {
+                                                    "id": 75,
+                                                    "name": "Yadira",
+                                                    "surname": "Albedo Soria",
+                                                    "role": "00100000",
+                                                    "repImage": "388eac5f-32b2-4525-8231-4bcb46eb39f8.webp",
+                                                    "validatorActivities": []
+                                                }
+                                            },
+                                            "validatorActivities": []
+                                        }
+                                    }
+                                },
+                                "rate": {
+                                    "id": 66,
+                                    "maxParticipants": 40,
+                                    "collective": {
+                                        "id": 18,
+                                        "name": "Ordinario"
+                                    },
+                                    "requiredDocuments": [],
+                                    "rate_modalities": [
+                                        {
+                                            "id": 149,
+                                            "price": 120.0,
+                                            "modality": {
+                                                "id": 1,
+                                                "name": "Presencial"
+                                            }
+                                        },
+                                        {
+                                            "id": 150,
+                                            "price": 100.0,
+                                            "modality": {
+                                                "id": 3,
+                                                "name": "Virtual"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "state": {
+                                    "id": 3,
+                                    "name": "Pendiente de pago"
+                                },
+                                "rate_modality": {
+                                    "id": 149,
+                                    "price": 120.0,
+                                    "modality": {
+                                        "id": 1,
+                                        "name": "Presencial"
+                                    }
+                                },
+                                "ratings": [],
+                                "noAssistances": []
+                            },
+                            {
+                                "id": 203,
+                                "solicitudeDate": "2024-02-23",
+                                "student": {
+                                    "id": 43,
+                                    "name": "Yadira",
+                                    "surname": "Albedo Soria",
+                                    "identificationDocumentNumber": "77428560A",
+                                    "user": {
+                                        "id": 115,
+                                        "dni": "77428560A",
+                                        "username": "yadh",
+                                        "appUser": {
+                                            "id": 75,
+                                            "name": "Yadira",
+                                            "surname": "Albedo Soria",
+                                            "repImage": "388eac5f-32b2-4525-8231-4bcb46eb39f8.webp",
+                                            "user": {
+                                                "id": 115,
+                                                "dni": "77428560A",
+                                                "username": "yadh",
+                                                "password": "$2a$10$WA7O3Yo8sN7OWIIETv7EIe1Z.IUfFZV5l3NwzNKKtXm/pG1Xm3.cC",
+                                                "isDown": false,
+                                                "student": {
+                                                    "id": 43
+                                                },
+                                                "appUser": {
+                                                    "id": 75,
+                                                    "name": "Yadira",
+                                                    "surname": "Albedo Soria",
+                                                    "role": "00100000",
+                                                    "repImage": "388eac5f-32b2-4525-8231-4bcb46eb39f8.webp",
+                                                    "validatorActivities": []
+                                                }
+                                            },
+                                            "validatorActivities": []
+                                        }
+                                    }
+                                },
+                                "rate": {
+                                    "id": 66,
+                                    "maxParticipants": 40,
+                                    "collective": {
+                                        "id": 18,
+                                        "name": "Ordinario"
+                                    },
+                                    "requiredDocuments": [],
+                                    "rate_modalities": [
+                                        {
+                                            "id": 149,
+                                            "price": 120.0,
+                                            "modality": {
+                                                "id": 1,
+                                                "name": "Presencial"
+                                            }
+                                        },
+                                        {
+                                            "id": 150,
+                                            "price": 100.0,
+                                            "modality": {
+                                                "id": 3,
+                                                "name": "Virtual"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "state": {
+                                    "id": 3,
+                                    "name": "Pendiente de pago"
+                                },
+                                "rate_modality": {
+                                    "id": 149,
+                                    "price": 120.0,
+                                    "modality": {
+                                        "id": 1,
+                                        "name": "Presencial"
+                                    }
+                                },
+                                "ratings": [],
+                                "noAssistances": []
+                            },
+                            {
+                                "id": 204,
+                                "solicitudeDate": "2024-02-23",
+                                "student": {
+                                    "id": 43,
+                                    "name": "Yadira",
+                                    "surname": "Albedo Soria",
+                                    "identificationDocumentNumber": "77428560A",
+                                    "user": {
+                                        "id": 115,
+                                        "dni": "77428560A",
+                                        "username": "yadh",
+                                        "appUser": {
+                                            "id": 75,
+                                            "name": "Yadira",
+                                            "surname": "Albedo Soria",
+                                            "repImage": "388eac5f-32b2-4525-8231-4bcb46eb39f8.webp",
+                                            "user": {
+                                                "id": 115,
+                                                "dni": "77428560A",
+                                                "username": "yadh",
+                                                "password": "$2a$10$WA7O3Yo8sN7OWIIETv7EIe1Z.IUfFZV5l3NwzNKKtXm/pG1Xm3.cC",
+                                                "isDown": false,
+                                                "student": {
+                                                    "id": 43
+                                                },
+                                                "appUser": {
+                                                    "id": 75,
+                                                    "name": "Yadira",
+                                                    "surname": "Albedo Soria",
+                                                    "role": "00100000",
+                                                    "repImage": "388eac5f-32b2-4525-8231-4bcb46eb39f8.webp",
+                                                    "validatorActivities": []
+                                                }
+                                            },
+                                            "validatorActivities": []
+                                        }
+                                    }
+                                },
+                                "rate": {
+                                    "id": 66,
+                                    "maxParticipants": 40,
+                                    "collective": {
+                                        "id": 18,
+                                        "name": "Ordinario"
+                                    },
+                                    "requiredDocuments": [],
+                                    "rate_modalities": [
+                                        {
+                                            "id": 149,
+                                            "price": 120.0,
+                                            "modality": {
+                                                "id": 1,
+                                                "name": "Presencial"
+                                            }
+                                        },
+                                        {
+                                            "id": 150,
+                                            "price": 100.0,
+                                            "modality": {
+                                                "id": 3,
+                                                "name": "Virtual"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "state": {
+                                    "id": 3,
+                                    "name": "Pendiente de pago"
+                                },
+                                "rate_modality": {
+                                    "id": 149,
+                                    "price": 120.0,
+                                    "modality": {
+                                        "id": 1,
+                                        "name": "Presencial"
+                                    }
+                                },
+                                "ratings": [],
+                                "noAssistances": []
+                            },
+                            {
+                                "id": 205,
+                                "solicitudeDate": "2024-02-23",
+                                "student": {
+                                    "id": 43,
+                                    "name": "Yadira",
+                                    "surname": "Albedo Soria",
+                                    "identificationDocumentNumber": "77428560A",
+                                    "user": {
+                                        "id": 115,
+                                        "dni": "77428560A",
+                                        "username": "yadh",
+                                        "appUser": {
+                                            "id": 75,
+                                            "name": "Yadira",
+                                            "surname": "Albedo Soria",
+                                            "repImage": "388eac5f-32b2-4525-8231-4bcb46eb39f8.webp",
+                                            "user": {
+                                                "id": 115,
+                                                "dni": "77428560A",
+                                                "username": "yadh",
+                                                "password": "$2a$10$WA7O3Yo8sN7OWIIETv7EIe1Z.IUfFZV5l3NwzNKKtXm/pG1Xm3.cC",
+                                                "isDown": false,
+                                                "student": {
+                                                    "id": 43
+                                                },
+                                                "appUser": {
+                                                    "id": 75,
+                                                    "name": "Yadira",
+                                                    "surname": "Albedo Soria",
+                                                    "role": "00100000",
+                                                    "repImage": "388eac5f-32b2-4525-8231-4bcb46eb39f8.webp",
+                                                    "validatorActivities": []
+                                                }
+                                            },
+                                            "validatorActivities": []
+                                        }
+                                    }
+                                },
+                                "rate": {
+                                    "id": 66,
+                                    "maxParticipants": 40,
+                                    "collective": {
+                                        "id": 18,
+                                        "name": "Ordinario"
+                                    },
+                                    "requiredDocuments": [],
+                                    "rate_modalities": [
+                                        {
+                                            "id": 149,
+                                            "price": 120.0,
+                                            "modality": {
+                                                "id": 1,
+                                                "name": "Presencial"
+                                            }
+                                        },
+                                        {
+                                            "id": 150,
+                                            "price": 100.0,
+                                            "modality": {
+                                                "id": 3,
+                                                "name": "Virtual"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "state": {
+                                    "id": 3,
+                                    "name": "Pendiente de pago"
+                                },
+                                "rate_modality": {
+                                    "id": 149,
+                                    "price": 120.0,
+                                    "modality": {
+                                        "id": 1,
+                                        "name": "Presencial"
+                                    }
+                                },
+                                "ratings": [],
+                                "noAssistances": []
+                            },
+                            {
+                                "id": 206,
+                                "solicitudeDate": "2024-02-23",
+                                "student": {
+                                    "id": 43,
+                                    "name": "Yadira",
+                                    "surname": "Albedo Soria",
+                                    "identificationDocumentNumber": "77428560A",
+                                    "user": {
+                                        "id": 115,
+                                        "dni": "77428560A",
+                                        "username": "yadh",
+                                        "appUser": {
+                                            "id": 75,
+                                            "name": "Yadira",
+                                            "surname": "Albedo Soria",
+                                            "repImage": "388eac5f-32b2-4525-8231-4bcb46eb39f8.webp",
+                                            "user": {
+                                                "id": 115,
+                                                "dni": "77428560A",
+                                                "username": "yadh",
+                                                "password": "$2a$10$WA7O3Yo8sN7OWIIETv7EIe1Z.IUfFZV5l3NwzNKKtXm/pG1Xm3.cC",
+                                                "isDown": false,
+                                                "student": {
+                                                    "id": 43
+                                                },
+                                                "appUser": {
+                                                    "id": 75,
+                                                    "name": "Yadira",
+                                                    "surname": "Albedo Soria",
+                                                    "role": "00100000",
+                                                    "repImage": "388eac5f-32b2-4525-8231-4bcb46eb39f8.webp",
+                                                    "validatorActivities": []
+                                                }
+                                            },
+                                            "validatorActivities": []
+                                        }
+                                    }
+                                },
+                                "rate": {
+                                    "id": 66,
+                                    "maxParticipants": 40,
+                                    "collective": {
+                                        "id": 18,
+                                        "name": "Ordinario"
+                                    },
+                                    "requiredDocuments": [],
+                                    "rate_modalities": [
+                                        {
+                                            "id": 149,
+                                            "price": 120.0,
+                                            "modality": {
+                                                "id": 1,
+                                                "name": "Presencial"
+                                            }
+                                        },
+                                        {
+                                            "id": 150,
+                                            "price": 100.0,
+                                            "modality": {
+                                                "id": 3,
+                                                "name": "Virtual"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "state": {
+                                    "id": 3,
+                                    "name": "Pendiente de pago"
+                                },
+                                "rate_modality": {
+                                    "id": 149,
+                                    "price": 120.0,
+                                    "modality": {
+                                        "id": 1,
+                                        "name": "Presencial"
+                                    }
+                                },
+                                "ratings": [],
+                                "noAssistances": []
+                            }
+                        ],
+                        "scheduleHours": [
+                            {
+                                "id": 76,
+                                "day": "Lunes",
+                                "hourFrom": "1970-01-01T09:00:00.524+00:00",
+                                "hourTo": "1970-01-01T11:00:00.524+00:00"
+                            }
+                        ]
+                    }
+                ],
+                "rates": [
+                    {
+                        "id": 66,
+                        "maxParticipants": 40,
+                        "collective": {
+                            "id": 18,
+                            "name": "Ordinario"
+                        },
+                        "requiredDocuments": [],
+                        "rate_modalities": [
+                            {
+                                "id": 149,
+                                "price": 120.0,
+                                "modality": {
+                                    "id": 1,
+                                    "name": "Presencial"
+                                }
+                            },
+                            {
+                                "id": 150,
+                                "price": 100.0,
+                                "modality": {
+                                    "id": 3,
+                                    "name": "Virtual"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "discounts": [],
+                "participatorRoles": [
+                    {
+                        "id": 139,
+                        "hours": 22.0,
+                        "participator": {
+                            "id": 11,
+                            "name": "Alejandro",
+                            "surname": "Díaz Martí",
+                            "user": {
+                                "id": 116,
+                                "dni": "77455991E",
+                                "username": "aled",
+                                "appUser": {
+                                    "id": 76,
+                                    "name": "Alejandro",
+                                    "surname": "Díaz Martí",
+                                    "user": {
+                                        "id": 116,
+                                        "dni": "77455991E",
+                                        "username": "aled",
+                                        "password": "$2a$10$ul66dedAar0dV.Ht/m4Ql.t4ohkB/El081bi6nM6n/oJS5XRvFMiC",
+                                        "isDown": false,
+                                        "participator": {
+                                            "id": 11,
+                                            "name": "Alejandro",
+                                            "surname": "Díaz Martí"
+                                        },
+                                        "appUser": {
+                                            "id": 76,
+                                            "name": "Alejandro",
+                                            "surname": "Díaz Martí",
+                                            "role": "00100000",
+                                            "department": {
+                                                "id": 10007,
+                                                "name": "Fundacion fguma",
+                                                "isCI": false
+                                            },
+                                            "validatorActivities": []
+                                        }
+                                    },
+                                    "validatorActivities": []
+                                }
+                            }
+                        },
+                        "role": {
+                            "id": 5,
+                            "name": "Ponente"
+                        },
+                        "tutorings": []
+                    }
+                ],
+                "parcialPayments": [],
+                "languageLevels": [],
+                "requiredDocuments": [
+                    {
+                        "id": 22,
+                        "name": "DNI"
+                    }
+                ],
+                "announcements": [],
+                "atributes": [
+                    {
+                        "id": 7,
+                        "fieldName": "Idiomas",
+                        "viewOrder": 1
+                    },
+                    {
+                        "id": 8,
+                        "fieldName": "Infantil",
+                        "viewOrder": 2
+                    },
+                    {
+                        "id": 10,
+                        "fieldName": "Arte",
+                        "viewOrder": 4
+                    },
+                    {
+                        "id": 11,
+                        "fieldName": "Ciencias",
+                        "viewOrder": 5
+                    },
+                    {
+                        "id": 14,
+                        "fieldName": "Derecho",
+                        "viewOrder": 8
+                    }
+                ],
+                "validators": [
+                    {
+                        "id": 86,
+                        "name": "Isabel",
+                        "surname": "Ramirez Ortega",
+                        "user": {
+                            "id": 124,
+                            "dni": "74333256T",
+                            "username": "isaram",
+                            "password": "$2a$10$/oT.oyiHLQ5J4eMit/.vhOfo4f6BFWhIzCzlz4O.w6sOuwMo4p8t2",
+                            "isDown": false,
+                            "participator": {
+                                "id": 12,
+                                "name": "Isabel",
+                                "surname": "Ramirez Ortega"
+                            },
+                            "appUser": {
+                                "id": 86,
+                                "name": "Isabel",
+                                "surname": "Ramirez Ortega",
+                                "role": "00010000",
+                                "department": {
+                                    "id": 10007,
+                                    "name": "Fundacion fguma",
+                                    "isCI": false
+                                },
+                                "validatorActivities": [
+                                    {
+                                        "id": 107,
+                                        "name": "Análisis de datos con Python"
+                                    }
+                                ]
+                            }
+                        },
+                        "validatorActivities": [
+                            {
+                                "id": 107,
+                                "name": "Análisis de datos con Python",
+                                "event": {
+                                    "id": 25,
+                                    "name": "Cursos Online 2024",
+                                    "edition": {
+                                        "id": 24,
+                                        "course": "2023-24"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 52,
+                        "name": "Sara",
+                        "surname": "Gonzalez Gargar",
+                        "user": {
+                            "id": 87,
+                            "dni": "84569122P",
+                            "username": "ssgorga",
+                            "password": "$2a$10$yZdIVjYI52vXvjoRZDDkbOzGEjiu8OOTWNf6Ga8bfPxDPopwGHR..",
+                            "isDown": false,
+                            "appUser": {
+                                "id": 52,
+                                "name": "Sara",
+                                "surname": "Gonzalez Gargar",
+                                "role": "00000102",
+                                "department": {
+                                    "id": 10007,
+                                    "name": "Fundacion fguma",
+                                    "isCI": false
+                                },
+                                "validatorActivities": [
+                                    {
+                                        "id": 107,
+                                        "name": "Análisis de datos con Python"
+                                    }
+                                ]
+                            }
+                        },
+                        "validatorActivities": [
+                            {
+                                "id": 107,
+                                "name": "Análisis de datos con Python",
+                                "event": {
+                                    "id": 25,
+                                    "name": "Cursos Online 2024",
+                                    "edition": {
+                                        "id": 24,
+                                        "course": "2023-24"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "role": {
+                "id": 5,
+                "name": "Ponente"
+            }
+        }
+    ]
+}
