@@ -8,32 +8,39 @@
 #ifndef _GESTION_MEMORIA_
 #define _GESTION_MEMORIA_
 
-typedef struct T_Nodo* T_Manejador;
+typedef struct T_Nodo *T_Manejador;
 
-struct T_Nodo {
+struct T_Nodo
+{
 	unsigned inicio;
 	unsigned fin;
 	T_Manejador sig;
 };
 
-/* Crea la estructura utilizada para gestionar la memoria disponible. Inicialmente, sólo un nodo desde 0 a MAX */
-	void crear(T_Manejador* manejador);
+/* Crea la estructura utilizada para gestionar la memoria disponible. Inicialmente, sï¿½lo un nodo desde 0 a MAX */
+void crear(T_Manejador *manejador);
 
-/* Destruye la estructura utilizada (libera todos los nodos de la lista. El parámetro manejador debe terminar apuntando a NULL */
-	void destruir(T_Manejador* manejador);
+/* Destruye la estructura utilizada (libera todos los nodos de la lista. El parï¿½metro manejador debe terminar apuntando a NULL */
+void destruir(T_Manejador *manejador);
 
-/* Devuelve en “dir” la dirección de memoria “simulada” (unsigned) donde comienza el trozo de memoria continua de tamaño “tam” solicitada.
-Si la operación se pudo llevar a cabo, es decir, existe un trozo con capacidad suficiente, devolvera TRUE (1) en “ok”; FALSE (0) en otro caso.
+/* Devuelve en ï¿½dirï¿½ la direcciï¿½n de memoria ï¿½simuladaï¿½ (unsigned) donde comienza el trozo de memoria continua de tamaï¿½o ï¿½tamï¿½ solicitada.
+Si la operaciï¿½n se pudo llevar a cabo, es decir, existe un trozo con capacidad suficiente, devolvera TRUE (1) en ï¿½okï¿½; FALSE (0) en otro caso.
  */
-	void obtener(T_Manejador *manejador, unsigned tam, unsigned* dir, unsigned* ok);
+void obtener(T_Manejador *manejador, unsigned tam, unsigned *dir, unsigned *ok);
 
 /* Muestra el estado actual de la memoria, bloques de memoria libre */
-	void mostrar (T_Manejador manejador);
+void mostrar(T_Manejador manejador);
 
-/* Devuelve el trozo de memoria continua de tamaño “tam” y que
- * comienza en “dir”.
+/* Devuelve el trozo de memoria continua de tamaï¿½o ï¿½tamï¿½ y que
+ * comienza en ï¿½dirï¿½.
  * Se puede suponer que se trata de un trozo obtenido previamente.
  */
-	void devolver(T_Manejador *manejador,unsigned tam,unsigned dir);
+void devolver(T_Manejador *manejador, unsigned tam, unsigned dir);
+
+int bytesDisponibles(T_Manejador m); // devuelve el nÃºmero total de bytes disponibles almacenados por el manejador
+
+void bytesContiguos(T_Manejador m, int *dir, int *tam); // devuelve en tam el mayor nÃºmero de bytes disponibles de forma contigua (en un mismo nodo) en el manejador. dir es la primer direcciÃ³n en la que empieza el bloque
+
+void mezclar(T_Manejador *m1, T_Manejador m2); // aÃ±ade a m1 todos los bloques de memoria disponible de m2 (asumiendo que m1 y m2 no comparten ningÃºn byte de memoria)
 
 #endif
