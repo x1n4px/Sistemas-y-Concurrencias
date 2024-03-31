@@ -180,43 +180,31 @@ int sumar(TLista lista)
     return suma;
 }
 
-/*
-void crearDesdeFichero(char *fichero, TLista *mazo, TLista *jugador1, TLista *jugador2) {
-  FILE *f = fopen(fichero, "r");
-  if (f == NULL) {
-    printf("Error al abrir el fichero\n");
-    return;
-  }
+void leerLinea(FILE *f, TLista *lista)
+{
+    int num = 0;
+    TCarta carta;
 
-  TCarta carta;
-  char palo;
-  int valor;
-  int fila = 0;
+    fscanf(f, "%d", &num);
 
-  while (!feof(f)) {
-    int caracter = fgetc(f);
-
-    if (caracter == '\n') {
-      fila++;
-      continue;
+    for (int i = 0; i < num; i++)
+    {
+        fscanf(f, "%d %c", &carta.valor, &carta.palo);
+        insertarOrdenado(lista, carta);
     }
+}
 
-    ungetc(caracter, f); // Devolver el caracter leído al flujo
+void crearDesdeFichero(char *nombre, TLista *mazo, TLista *jugador1,
+                       TLista *jugador2)
+{
+    FILE *f;
 
-    if (fscanf(f, "%d:%c", &valor, &palo) == 2) {
-      carta.valor = valor;
-      carta.palo = palo;
+    if ((f = fopen(nombre, "rt")) == NULL)
+        perror("Error abriendo el fichero");
 
-      if (fila == 0) {
-        insertarOrdenado(mazo, carta);
-      } else if (fila == 1) {
-        insertarFinal(jugador1, carta);
-      } else {
-        insertarFinal(jugador2, carta);
-      }
-    }
-  }
+    leerLinea(f, mazo);
+    leerLinea(f, jugador1);
+    leerLinea(f, jugador2);
 
-  fclose(f);
-}*/
-
+    fclose(f);
+}
