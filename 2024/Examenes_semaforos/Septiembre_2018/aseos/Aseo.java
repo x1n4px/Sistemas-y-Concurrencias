@@ -18,8 +18,8 @@ public class Aseo {
 		System.out.println("Hombre " + id + " quiere entrar");
 		mutex1.acquire();
 		nHombres++;
-		if(nHombres == 1){
-			turno.acquire();
+		if(nHombres == 1){ // si hay un hombre dentro, no puede entrar ninguna mujer
+			turno.acquire(); // bloquea a las mujeres
 		}
 		System.out.println("Hombre " + id + " entra. Hay " + nHombres + " hombres y " + nMujeres + " mujeres");
 		mutex1.release();
@@ -33,8 +33,8 @@ public class Aseo {
 		System.out.println("Hombre " + id + " quiere entrar");
 		mutex2.acquire();
 		nMujeres++;
-		if(nMujeres == 1){
-			turno.acquire();
+		if(nMujeres == 1){ // si hay una mujer dentro, no puede entrar ningun hombre
+			turno.acquire(); // bloquea a los hombres
 		}
 		System.out.println("Mujer " + id + " entra. Hay " + nHombres + " hombres y " + nMujeres + " mujeres");
 		mutex2.release();
@@ -46,8 +46,8 @@ public class Aseo {
 		mutex1.acquire();
 		nHombres--;
 		System.out.println("Hombre " + id + " sale. Hay " + nHombres + " hombres y " + nMujeres + " mujeres");
-		if(nHombres == 0){
-			turno.release();
+		if(nHombres == 0){ // si no hay hombres dentro, las mujeres pueden entrar
+			turno.release(); // desbloquea a las mujeres
 		}
 		mutex1.release();
 	}
@@ -56,8 +56,8 @@ public class Aseo {
 		mutex2.acquire();
 		nMujeres--;
 		System.out.println("Mujer " + id + " sale. Hay " + nHombres + " hombres y " + nMujeres + " mujeres");
-		if(nMujeres == 0){
-			turno.release();
+		if(nMujeres == 0){ // si no hay mujeres dentro, los hombres pueden entrar
+			turno.release(); // desbloquea a los hombres
 		}
 		mutex2.release();
 	}

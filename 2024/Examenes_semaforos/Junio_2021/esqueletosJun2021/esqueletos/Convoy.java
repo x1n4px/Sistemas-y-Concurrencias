@@ -1,53 +1,57 @@
+import java.util.concurrent.Semaphore;
+
 public class Convoy {
 
-	private int numFurgonetaMax;
-	private int currentFurgoneta;
-	private boolean hayLider = false;
-	private int idLider = -1;
-	private boolean destinoArrived = false;
-	private int numOutFurg;
+	int nFurgonetas;
+	private volatile int contFurgonetas;
+	int lider;
+	Semaphore mutex;
+	Semaphore esperaLider;
+	Semaphore inicioRuta;
+	Semaphore entranFurgonetas;
+	Semaphore puedoSalir;
 
 	public Convoy(int tam) {
-		numFurgonetaMax = tam;
-		currentFurgoneta = 0;
-		numOutFurg = 0;
-	
+		nFurgonetas = tam;
+		contFurgonetas = 0;
+		lider = 0;
+		mutex = new Semaphore(1, true);
+		esperaLider = new Semaphore(0, true);
+		inicioRuta = new Semaphore(0, true);
+		entranFurgonetas = new Semaphore(1, true);
+		puedoSalir = new Semaphore(0, true);
 	}
 
 	/**
 	 * Las furgonetas se unen al convoy
 	 * La primera es la lider, el resto son seguidoras
 	 **/
-	public synchronized int unir(int id)  throws InterruptedException{
-		// TODO: Poner los mensajes donde corresponda
-		if(!hayLider) {
-			currentFurgoneta++;
-			idLider = id;
-			hayLider = true;
-			notifyAll();
-			System.out.println("** Furgoneta " + id + " lidera del convoy **");
-
-		}else{
-			while(!hayLider){
-				wait();
-			}
-			currentFurgoneta++;
-			notifyAll();
+	public int unir(int id) throws InterruptedException {
+		entranFurgonetas.acquire();
+		mutex.acquire();
+		contFurgonetas++;
+		if (contFurgonetas == 1) {
+			System.out.println("Furgoneta " + id + " lider");
+			lider = id;
+			entranFurgonetas.release();
+		} else {
 			System.out.println("Furgoneta " + id + " seguidora");
+			if (contFurgonetas == nFurgonetas) {
+				inicioRuta.release();
+			} else {
+				entranFurgonetas.release();
+			}
 		}
-
-		
-		return idLider;
+		mutex.release();
+		return lider;
 	}
 
 	/**
 	 * La furgoneta lider espera a que todas las furgonetas se unan al convoy
 	 * Cuando esto ocurre calcula la ruta y se pone en marcha
 	 */
-	public synchronized void calcularRuta(int id)  throws InterruptedException{
-		while(currentFurgoneta != numFurgonetaMax) {
-			wait();
-		}
+	public void calcularRuta(int id) throws InterruptedException {
+		inicioRuta.acquire();
 		System.out.println("** Furgoneta " + id + " lider:  ruta calculada, nos ponemos en marcha **");
 	}
 
@@ -56,13 +60,10 @@ public class Convoy {
 	 * destino y deben abandonar el convoy
 	 * La furgoneta lider espera a que todas las furgonetas abandonen el convoy
 	 **/
-	public synchronized void destino(int id)  throws InterruptedException{
-		destinoArrived = true;
-		notifyAll();
-		while(numOutFurg != numFurgonetaMax -1) {
-			wait();
-		}
-
+	public void destino(int id) throws InterruptedException {
+		System.out.println("** Furgoneta " + id + " lider: hemos llegado al destino **");
+		puedoSalir.release();
+		esperaLider.acquire();
 		System.out.println("** Furgoneta " + id + " lider abandona el convoy **");
 	}
 
@@ -71,13 +72,18 @@ public class Convoy {
 	 * destino
 	 * y abandonan el convoy
 	 **/
-	public synchronized void seguirLider(int id) throws InterruptedException {
-		while(!destinoArrived) {
-			wait();
+	public void seguirLider(int id) throws InterruptedException {
+		puedoSalir.acquire();
+		mutex.acquire();
+		contFurgonetas--;
+
+		if (contFurgonetas == 1) {
+			esperaLider.release();
+		} else {
+			puedoSalir.release();
 		}
-		numOutFurg++;
-		notify();
 		System.out.println("Furgoneta " + id + " abandona el convoy");
+		mutex.release();
 	}
 
 	/**
