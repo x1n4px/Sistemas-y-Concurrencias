@@ -1,7 +1,5 @@
 package esqueleto;
 
-import java.util.concurrent.Semaphore;
-
 public class Curso {
 	private final int MAX_ALUMNOS_INI = 10;
 	private final int ALUMNOS_AV = 3;
@@ -39,7 +37,7 @@ public class Curso {
 		while (turno) {
 			wait();
 		}
-		if (cntGrupo == 3) {
+		if (cntGrupo == ALUMNOS_AV) {
 			grupoformado = true;
 			turno = true;
 			grupoAcaba = false;
@@ -69,7 +67,7 @@ public class Curso {
 			wait();
 		}
 		salen++;
-		if(salen == 3) {
+		if(salen == ALUMNOS_AV) {
 			grupoformado = false;
 			turno = false;
 			salen = 0;

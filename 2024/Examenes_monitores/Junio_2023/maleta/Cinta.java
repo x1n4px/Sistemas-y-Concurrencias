@@ -1,6 +1,5 @@
 package Junio_2023.maleta;
 
-import java.util.concurrent.locks.*;
 
 public class Cinta {
 
