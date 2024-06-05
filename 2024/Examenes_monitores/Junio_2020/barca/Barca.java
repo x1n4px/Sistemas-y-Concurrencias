@@ -1,6 +1,5 @@
 package barca;
 
-import java.util.concurrent.Semaphore;
 
 public class Barca {
     int max = 3, pasajeros = 0, orilla = 0;

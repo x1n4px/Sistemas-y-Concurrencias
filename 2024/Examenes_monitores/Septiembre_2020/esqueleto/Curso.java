@@ -37,6 +37,7 @@ public class Curso {
 		while (turno) {
 			wait();
 		}
+		cntGrupo++;
 		if (cntGrupo == ALUMNOS_AV) {
 			grupoformado = true;
 			turno = true;
