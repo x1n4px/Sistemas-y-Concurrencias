@@ -140,34 +140,31 @@ public class Panel extends JPanel {
 
 	// Añade a JTextArea listaPrimos1 la lista que se le pasa.
 	// Recuerda meter retornos de carro para que salga como en la captura de pantalla
-	public void escribePrimosTwin(List<Primos> list) {
-		for (int i = 0; i < list.size(); i++) {
-			listaPrimos1.append(i + ":" + list.get(i).toString() + " ");
-			if (i % 5 == 0 && i != 0) {
-				listaPrimos1.append("\n");
-			}
+	public void escribePrimosTwin(Primos pr, Integer numero) {
+		listaPrimos1.append(numero+":"+pr.toString() +" ");
+		if(numero % 5 == 0 && numero != 0) {
+			listaPrimos1.append("\n");
 		}
 	}
 
 	// Añade a JTextArea listaPrimos2 la lista que se le pasa.
-	// Recuerda meter retornos de carro para que salga como en la captura de pantalla
-	public void escribePrimosCousin(List<Primos> list) {
-		for (int i = 0; i < list.size(); i++) {
-			listaPrimos2.append(i + ":" + list.get(i).toString() + " ");
-			if (i % 5 == 0 && i != 0) {
-				listaPrimos2.append("\n");
-			}
+	// Recuerda meter retornos de carro para que salga como en la captura de
+	// pantalla
+	public void escribePrimosCousin(Primos pr, Integer numero) {
+		listaPrimos2.append(numero+":"+pr.toString() +" ");
+		if(numero % 5 == 0 && numero != 0) {
+			listaPrimos2.append("\n");
 		}
 	}
 
 	// Añade a JTextArea listaPrimos3 la lista que se le pasa.
-	// Recuerda meter retornos de carro para que salga como en la captura de pantalla
-	public void escribePrimosSexy(List<Primos> list) {
-		for (int i = 0; i < list.size(); i++) {
-			listaPrimos3.append(i + ":" + list.get(i).toString() + " ");
-			if (i % 5 == 0 && i != 0) {
-				listaPrimos3.append("\n");
-			}
+	// Recuerda meter retornos de carro para que salga como en la captura de
+	// pantalla
+
+	public void escribePrimosSexy(Primos pr, Integer numero) {
+		listaPrimos3.append(numero+":"+pr.toString() +" ");
+		if(numero % 5 == 0 && numero != 0) {
+			listaPrimos3.append("\n");
 		}
 	}
 
